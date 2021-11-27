@@ -16,6 +16,7 @@ use App\Support\Enum\UserStatus;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Services\Profile\UpdatePassword;
+use App\Support\Enum\ClassMessages;
 
 class AuthController extends Controller
 {
@@ -41,28 +42,81 @@ class AuthController extends Controller
      * Handle a login request to the application.
      * @param LoginRequest $request
      */
-    public function postLogin(LoginRequest $request)
-    {
-        $validated = $request->validated();
-        if (auth()->attempt(['email' =>  $validated['email'], 'password' =>  $validated['password']])) {
-            $user = Auth::user();
-            $token = $user->createToken($validated['email'])->accessToken;
-            $user->last_login = \Carbon\Carbon::now();
-            $user->save();
-            $data=[
-                "user" => $user,
-                "company" => (Auth::user()->companies)[0],
-                "role" => Auth::user()->getRoleNames() 
-            ];
+    // public function postLogin(LoginRequest $request)
+    // {
+    //     $validated = $request->validated();
+    //     if (auth()->attempt(['email' =>  $validated['email'], 'password' =>  $validated['password']])) {
+    //         $user = Auth::user();
+    //         $token = $user->createToken($validated['email'])->accessToken;
+    //         $user->last_login = \Carbon\Carbon::now();
+    //         $user->save();
+    //         $data=[
+    //             "user" => $user,
+    //             "company" => (Auth::user()->companies)[0],
+    //             "role" => Auth::user()->getRoleNames() 
+    //         ];
            
-            $first_time_login = false;
-            if ($user->first_time_login) {
-                $first_time_login = true;
-            }
-            return response()->json(['status' => true, 'message' => 'Login successful','token' => $token, 'data' => $user,  'first_time_login' => $first_time_login, ], 200);
-        } else {
-            return response()->json(['status' => false, 'message' => 'UnAuthorised'], 401);
+    //         $first_time_login = false;
+    //         if ($user->first_time_login) {
+    //             $first_time_login = true;
+    //         }
+    //         return response()->json(['status' => true, 'message' => 'Login successful','token' => $token, 'data' => $user,  'first_time_login' => $first_time_login, ], 200);
+    //     } else {
+    //         return response()->json(['status' => false, 'message' => 'UnAuthorised'], 401);
+    //     }
+    // }
+
+
+
+
+      /**
+     * Handle a login request to the application.
+     *
+     * @param LoginRequest $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postLogin(Request $request)
+    {
+        if (empty($request->email) || empty($request->password)) {
+            return redirect()->back()->with('error', ClassMessages::EMAIL_PASSWORD_EMPTY);
         }
+
+        //Redirect URL that can be passed as hidden field.
+        $to = $request->has('to') ? "?to=" . $request->get('to') : '';
+
+        $credentials = $this->getCredentials($request);
+
+        if (!Auth::validate($credentials)) {
+            return redirect()->to(route('login') . $to)
+                ->with('error', ClassMessages::INVALID_EMAIL_PASSWORD);
+        }
+
+        $user = Auth::getProvider()->retrieveByCredentials($credentials);
+
+        if ($user->isUnconfirmed()) {
+            return redirect()->to(route('login') . $to)
+                ->with('error', ClassMessages::EMAIL_CONFIRMATION);
+        }
+
+        if ($user->isBanned()) {
+            return redirect()->to(route('login') . $to)
+                ->with('error', ClassMessages::BANNED_ACCOUNT);
+        }
+
+        if ($user->status === 'Unconfirmed' || $user->status === '') {
+            return redirect()->to(route('login') . $to);
+        }
+
+        if (!$this->isRightUser($user)) {
+            return redirect()->to(route('login'))
+                ->with('error', ClassMessages::INVALID_EMAIL_PASSWORD);
+        }
+
+        Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember);
+
+        $this->setUserSession($user);
+
+        return $this->handleUserWasAuthenticated($request, $user);
     }
 
     public function forgetPassword(ForgetPasswordRequest $request)
