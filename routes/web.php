@@ -34,4 +34,5 @@ use Inertia\Inertia;
             'foo'=>'bar',
         ]);
     });
+    
 // });
