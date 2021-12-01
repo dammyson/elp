@@ -38,7 +38,7 @@ class RegistrationService implements BaseServiceInterface
     {
         $user = $this->createUser($data);
         $user->companies()->attach($new_company->id);
-        //$user->assignRole(['admin'], 'web');
+        $user->assignRole(['admin'], 'web');
         //$user->notify(new ActivateUser($this->mailData($user)));
         return $user;
     }

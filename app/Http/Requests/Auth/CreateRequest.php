@@ -20,7 +20,7 @@ class CreateRequest extends Request
     {
         return [
             'company' => 'required|string',
-            'slug' => 'required|slug|unique:companies',
+            'slug' => 'required|string',
             'email' => 'required|email|unique:users',
             'phone_number' => 'required|string',
             'first_name' => 'required|string',
