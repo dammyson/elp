@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import NumberFormat from 'react-number-format';
 import InputMask from 'react-input-mask';
 import classNames from 'classnames';
-import Portal from '../../../layout/Portal/Portal';
+import Portal from '../../../layout/Portal';
 import Validation from './Validation';
 
 const Input = forwardRef(

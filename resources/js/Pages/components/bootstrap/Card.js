@@ -6,7 +6,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import TagWrapper from '../TagWrapper';
 import Icon from '../icon/Icon';
 import Button from './Button';
-import PrismCode from '../extras/PrismCode';
+// import PrismCode from '../extras/PrismCode';
 
 export const CardLabel = forwardRef(
 	({ tag, className, children, icon, iconColor, pre, ...props }, ref) => {
@@ -194,49 +194,49 @@ CardBody.defaultProps = {
 	isScrollable: false,
 };
 
-export const CardCodeView = React.memo(
-	// eslint-disable-next-line react/prop-types
-	({ children, language, customStyle, isPrismJs, className }) => {
-		if (isPrismJs) {
-			return (
-				<PrismCode
-					code={children}
-					language={language}
-					className={classNames('my-0', className)}
-					style={customStyle}
-				/>
-			);
-		}
-		return (
-			<SyntaxHighlighter
-				language={language}
-				style={atomOneLight}
-				customStyle={{
-					borderRadius: 13,
-					backgroundColor: 'var(--bs-light)',
-					fontSize: '1rem',
-					padding: '1.5rem 2rem',
-					...customStyle,
-				}}
-				wrapLongLines
-				PreTag='code'
-				className={classNames('shadow-sm', className)}>
-				{children}
-			</SyntaxHighlighter>
-		);
-	},
-);
-CardCodeView.propTypes = {
-	children: PropTypes.node.isRequired,
-	language: PropTypes.string,
-	isPrismJs: PropTypes.bool,
-	className: PropTypes.string,
-};
-CardCodeView.defaultProps = {
-	language: 'jsx',
-	isPrismJs: true,
-	className: null,
-};
+// export const CardCodeView = React.memo(
+// 	// eslint-disable-next-line react/prop-types
+// 	({ children, language, customStyle, isPrismJs, className }) => {
+// 		if (isPrismJs) {
+// 			return (
+// 				<PrismCode
+// 					code={children}
+// 					language={language}
+// 					className={classNames('my-0', className)}
+// 					style={customStyle}
+// 				/>
+// 			);
+// 		}
+// 		return (
+// 			<SyntaxHighlighter
+// 				language={language}
+// 				style={atomOneLight}
+// 				customStyle={{
+// 					borderRadius: 13,
+// 					backgroundColor: 'var(--bs-light)',
+// 					fontSize: '1rem',
+// 					padding: '1.5rem 2rem',
+// 					...customStyle,
+// 				}}
+// 				wrapLongLines
+// 				PreTag='code'
+// 				className={classNames('shadow-sm', className)}>
+// 				{children}
+// 			</SyntaxHighlighter>
+// 		);
+// 	},
+// );
+// CardCodeView.propTypes = {
+// 	children: PropTypes.node.isRequired,
+// 	language: PropTypes.string,
+// 	isPrismJs: PropTypes.bool,
+// 	className: PropTypes.string,
+// };
+// CardCodeView.defaultProps = {
+// 	language: 'jsx',
+// 	isPrismJs: true,
+// 	className: null,
+// };
 
 export const CardFooterLeft = forwardRef(({ tag, className, children, ...props }, ref) => {
 	return (
