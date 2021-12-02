@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+
+// Route::group(['middleware' => ['auth']], function() {
+    // your routes
+    
+    Route::get('/',function(){
+        return Inertia::render('Welcome',[
+            'foo'=>'bar',
+        ]);
+    });
+
+    Route::get('/login',function(){
+        return Inertia::render('Login',[
+            'foo'=>'bar',
+            'isSignUp'=>'true'
+        ]);
+    });
+    
+// });

@@ -21,8 +21,6 @@ Run `php artisan cache:clear`
 
 Run `php artisan config:clear`
 
-Run `php artisan passport:install`
-
 Run `php artisan migrate`
 
 Run `php artisan db:seed`
