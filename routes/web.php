@@ -19,21 +19,10 @@ use Inertia\Inertia;
 // });
 
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Route::group(['middleware' => ['auth']], function() {
-    // your routes
-    
-    Route::get('/',function(){
-        return Inertia::render('Welcome',[
-            'foo'=>'bar',
-        ]);
-    });
-
-    Route::get('/login',function(){
-        return Inertia::render('Login',[
-            'foo'=>'bar',
-            'isSignUp'=>'true'
-        ]);
-    });
-    
-// });
+Route::group(['middleware' => 'web'], function () {
+    Route::get(env('LARAVUE_PATH'), 'LaravueController@index')->where('any', '.*')->name('laravue');
+});
