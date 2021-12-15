@@ -1,9 +1,5 @@
 {
     "/js/app.js": "/js/app.js",
-<<<<<<< HEAD
     "/js/manifest.js": "/js/manifest.js",
     "/js/vendor.js": "/js/vendor.js"
-=======
-    "/css/app.css": "/css/app.css"
->>>>>>> fe324f379f40abde42ee9447bc2790b43657d351
 }
