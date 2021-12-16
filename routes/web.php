@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\LaravueController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,5 +25,5 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'web'], function () {
-    Route::get(env('LARAVUE_PATH'), 'LaravueController@index')->where('any', '.*')->name('laravue');
+    Route::get(env('LARAVUE_PATH'), [LaravueController::class,'index'])->where('any', '.*')->name('laravue');
 });
