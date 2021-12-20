@@ -43,7 +43,7 @@
 <script>
 import LangSelect from '@/components/LangSelect';
 import { validEmail } from '@/utils/validate';
-import { csrf } from '@/api/auth';
+import { login } from '@/api/auth';
 
 export default {
   name: 'Login',
@@ -102,8 +102,8 @@ export default {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true;
-          csrf().then(() => {
-            this.$store.dispatch('user/login', this.loginForm)
+          login(this.loginForm).then(() => {
+            this.$store.dispatch('/login', this.loginForm)
               .then(() => {
                 this.$router.push({ path: this.redirect || '/', query: this.otherQuery }, onAbort => {});
                 this.loading = false;
