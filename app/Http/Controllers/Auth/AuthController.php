@@ -107,67 +107,28 @@ class AuthController extends Controller
             return redirect()->to(route('login') . $to);
         }
 
-        if (!$this->isRightUser($user)) {
-            return redirect()->to(route('login'))
-                ->with('error', ClassMessages::INVALID_EMAIL_PASSWORD);
-        }
-
         Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password]);
 
         $this->setUserSession($user);
+        return response()->json(['status' => true, 'message' => 'Login successful','data' => $user ], 200);
 
-        return $this->handleUserWasAuthenticated($request, $user);
-    }
-
-    public function forgetPassword(ForgetPasswordRequest $request)
-    {
-        $validated = $request->validated();
-        try {
-            $forget_password = new ForgetPassword($validated);
-            $send_mail_user = $forget_password->run();
-            return response()->json(['status' => true, 'message' => $send_mail_user], 200);
-        } catch (\Exception $exception) {
-            Log::error($exception->getMessage());
-            return response()->json(['status' => false,  'message' => 'Error processing request'], 500);
-        }
-    }
-
-    public function CheckCanUpdatePassword(Request $request, $id)
-    {
-        if (!$request->hasValidSignature()) {
-            return response()->json(['status' => false, 'message' => 'Invalid/Expired link, contact admin'], 401);
-        }
-        $user = User::findOrFail($id);
-        if ($user->status !== UserStatus::ACTIVE) {
-            return response()->json(['status' => false, 'message' => 'You can not chane password your account has not been completed'], 401);
-        }
-        return response()->json(['status' => true, 'message' => 'This link is valid'], 200);
+       
     }
 
 
-    public function updatePassword(UpdatePasswordRequest $request, $id)
+
+    protected function setUserSession($user)
     {
-        $validated = $request->validated();
-        $user = User::findOrFail($id);
-        try {
-            (new UpdatePassword($user, $validated))->run();
-            return response()->json(['status' => true, 'message' => 'Password changed not proceed to login'], 200);
-        } catch (\Exception $exception) {
-            Log::error($exception->getMessage());
-            return response()->json(['status' => false,  'message' => 'Error processing request'], 500);
-        }
+        session()->forget('broadcaster_id');
+        session(['agency_id' => $user->companies->first()->id]);
     }
 
-    /**
-     * Create a new authentication controller instance.
-     * @param UserRepository $users
-     */
 
-    public function activate($id)
+    protected function getCredentials(Request $request)
     {
-        $user = User::findOrFail($id);
-        $user->status = UserStatus::ACTIVE;
-        $user->save();
-        return response()->json(['status' => true, 'data' => $user, 'message' => 'Activation successful'], 200);
+        return [
+            'email' => $request->email,
+            'password' => $request->password
+        ];
     }
 }
