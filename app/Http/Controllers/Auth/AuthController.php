@@ -112,7 +112,7 @@ class AuthController extends Controller
                 ->with('error', ClassMessages::INVALID_EMAIL_PASSWORD);
         }
 
-        Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember);
+        Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password]);
 
         $this->setUserSession($user);
 
