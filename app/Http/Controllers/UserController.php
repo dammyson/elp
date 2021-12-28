@@ -58,7 +58,7 @@ class UserController extends Controller
             return response()->json(['status' => true, 'data' => new UserCollection($new_user), 'message' => 'User invitation successful'], 200);
         } catch (\Exception $exception) {
             Log::error($exception->getMessage());
-            return response()->json(['status' => false,  'message' => 'Error processing request'], 500);
+            return response()->json(['status' => false,  'message' => 'Error processing request 11'], 500);
         }
     }
 
@@ -72,7 +72,7 @@ class UserController extends Controller
             return response()->json(['status' => true, 'data' => $user_list, 'message' => 'User list'], 200);
         } catch (\Exception $exception) {
             Log::error($exception->getMessage());
-            return response()->json(['status' => false,  'message' => 'Error processing request'], 500);
+            return response()->json(['status' => false,  'message' => 'Error processing request 12'], 500);
         }
     }
 
@@ -90,7 +90,7 @@ class UserController extends Controller
             return response()->json(['status' => true, 'data' => new UserResource($updated_user), 'message' => 'User Updated'], 200);
         } catch (\Exception $exception) {
             Log::error($exception->getMessage());
-            return response()->json(['status' => false,  'message' => 'Error processing request'], 500);
+            return response()->json(['status' => false,  'message' => 'Error processing request 13'], 500);
         }
     }
 
@@ -104,7 +104,7 @@ class UserController extends Controller
             return response()->json(['status' => true, 'data' => new UserResource($updated_user), 'message' => 'User Updated'], 200);
         } catch (\Exception $exception) {
             Log::error($exception->getMessage());
-            return response()->json(['status' => false,  'message' => 'Error processing request'], 500);
+            return response()->json(['status' => false,  'message' => 'Error processing request 14'], 500);
         }
     }
 
@@ -168,7 +168,7 @@ class UserController extends Controller
             return response()->json(['status' => true, 'data' => $invited_user, 'message' => 'Invitaion Link resent'], 200);
         } catch (\Exception $exception) {
             Log::error($exception->getMessage());
-            return response()->json(['status' => false,  'message' => 'Error processing request'], 500);
+            return response()->json(['status' => false,  'message' => 'Error processing request 15'], 500);
         }
     }
 

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Services\Profile\UpdatePassword;
 use App\Support\Enum\ClassMessages;
+use Illuminate\Http\Response;
 
 class AuthController extends Controller
 {
@@ -110,8 +111,7 @@ class AuthController extends Controller
         Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password]);
 
         $this->setUserSession($user);
-        return response()->json(['status' => true, 'message' => 'Login successful','data' => $user ], 200);
-
+        return response()->json(['status' => true, 'message' => 'Login successful','data' => new UserResource($user) ],  Response::HTTP_OK);
        
     }
 
