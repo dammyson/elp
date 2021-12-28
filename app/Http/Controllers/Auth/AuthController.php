@@ -76,43 +76,28 @@ class AuthController extends Controller
      * @param LoginRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function postLogin(Request $request)
+    public function postLogin(LoginRequest $request)
     {
-        if (empty($request->email) || empty($request->password)) {
-            return redirect()->back()->with('error', ClassMessages::EMAIL_PASSWORD_EMPTY);
+        $validated = $request->validated();
+        if (auth()->attempt(['email' =>  $validated['email'], 'password' =>  $validated['password']])) {
+            $user = Auth::user();
+            $token = $user->createToken($validated['email'])->accessToken;
+            $user->last_login = \Carbon\Carbon::now();
+            $user->save();
+            $data=[
+                "user" => $user,
+                "company" => (Auth::user()->companies)[0],
+                "role" => Auth::user()->getRoleNames() 
+            ];
+           
+            $first_time_login = false;
+            if ($user->first_time_login) {
+                $first_time_login = true;
+            }
+            return response()->json(['status' => true, 'message' => 'Login successful','token' => $token, 'data' => $user,  'first_time_login' => $first_time_login, ], 200);
+        } else {
+            return response()->json(['status' => false, 'message' => 'UnAuthorised'], 401);
         }
-
-        //Redirect URL that can be passed as hidden field.
-        $to = $request->has('to') ? "?to=" . $request->get('to') : '';
-
-        $credentials = $this->getCredentials($request);
-
-        if (!Auth::validate($credentials)) {
-            return redirect()->to(route('login') . $to)
-                ->with('error', ClassMessages::INVALID_EMAIL_PASSWORD);
-        }
-
-        $user = Auth::getProvider()->retrieveByCredentials($credentials);
-
-        if ($user->isUnconfirmed()) {
-            return redirect()->to(route('login') . $to)
-                ->with('error', ClassMessages::EMAIL_CONFIRMATION);
-        }
-
-        if ($user->isBanned()) {
-            return redirect()->to(route('login') . $to)
-                ->with('error', ClassMessages::BANNED_ACCOUNT);
-        }
-
-        if ($user->status === 'Unconfirmed' || $user->status === '') {
-            return redirect()->to(route('login') . $to);
-        }
-
-        Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password]);
-
-        $this->setUserSession($user);
-        return response()->json(['status' => true, 'message' => 'Login successful','data' => new UserResource($user) ],  Response::HTTP_OK);
-       
     }
 
 

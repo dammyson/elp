@@ -8,11 +8,12 @@ use Spatie\Permission\Models\Role;
 use App\Models\Company;
 use App\Traits\UuidTrait;
 use Spatie\Permission\Traits\HasRoles;
+use Laravel\Passport\HasApiTokens;
 
 
 class User extends Authenticatable
 {
-    use UuidTrait, HasRoles;
+    use HasApiTokens, UuidTrait, HasRoles;
 
     /**
      * The attributes that are mass assignable.

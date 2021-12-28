@@ -37,7 +37,7 @@ Route::post('/company', [CompanyController::class,'update'])->middleware('auth:a
 
 Route::prefix('users')->group(function () {
     Route::post('/',[UserController::class,'create'])->middleware('auth:api')->name('users.invite');
-    Route::get('/',  [UserController::class,'list'])->middleware('auth')->name('users.list');
+    Route::get('/',  [UserController::class,'list'])->middleware('auth:api')->name('users.list');
     Route::post('/{id}/resend-invitaion', [UserController::class,'resend'])->middleware('auth:api')->name('users.reinvite');
     Route::post('/{id}',[UserController::class,'update'])->middleware('auth:api')->name('users.update.role');//
     Route::delete('/{id}', [UserController::class,'destroy'])->middleware('auth:api')->name('user.delete'); 
