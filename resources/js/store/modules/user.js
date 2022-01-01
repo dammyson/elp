@@ -2,6 +2,7 @@ import { login, logout, getInfo } from '@/api/auth';
 import { isLogged, setLogged, removeToken } from '@/utils/auth';
 import router, { resetRouter } from '@/router';
 import store from '@/store';
+// import Cookies from 'js-cookie';
 
 const state = {
   id: null,
@@ -45,8 +46,16 @@ const actions = {
     return new Promise((resolve, reject) => {
       login({ email: email.trim(), password: password })
         .then(response => {
-          setLogged('1');
-          resolve();
+          console.log(response, 'user_login_response');
+          if (response.token) {
+            // save the token
+            setLogged(localStorage.getItem('login_token'));
+            localStorage.setItem(
+              'login_token',
+              response.token
+            );
+            resolve();
+          }
         })
         .catch(error => {
           console.log(error);
@@ -58,27 +67,36 @@ const actions = {
   // get user info
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
-      getInfo()
+      getInfo(localStorage.getItem('login_token'))
         .then(response => {
-          const { data } = response;
-
-          if (!data) {
+          // const { data } = response;
+          console.log(response, 'getinfo');
+          if (!response.data) {
             reject('Verification failed, please Login again.');
+          } else {
+            console.log('response data available');
           }
 
-          const { roles, name, avatar, introduction, permissions, id } = data;
-          // roles must be a non-empty array
+          const { roles, name, avatar, introduction, id } = response.data[0];
+          // const { first_name, avatar, introduction, id } = data;
+          const permissions = ['view menu element ui', 'view menu permission', 'view menu components', 'view menu charts', 'view menu nested routes', 'view menu table', 'view menu administrator', 'view menu theme', 'view menu clipboard', 'view menu excel', 'view menu zip', 'view menu pdf', 'view menu i18n', 'manage user', 'manage article', 'manage permission'];
+          console.log({ roles, name, avatar, introduction, id });
+          // const data = response.data[0].push({ 'permissions': permissions });
+          // const roles = ['admin'];
+          // // roles must be a non-empty array
           if (!roles || roles.length <= 0) {
             reject('getInfo: roles must be a non-null array!');
+          } else {
+            console.log(response.data[0], 'roles Not  Empty');
           }
-
           commit('SET_ROLES', roles);
           commit('SET_PERMISSIONS', permissions);
           commit('SET_NAME', name);
           commit('SET_AVATAR', avatar);
           commit('SET_INTRODUCTION', introduction);
           commit('SET_ID', id);
-          resolve(data);
+          console.log(state, 'saved state');
+          // resolve(response.data[0]);
         })
         .catch(error => {
           reject(error);
@@ -122,7 +140,7 @@ const actions = {
       // setLogged(token);
 
       // const { roles } = await dispatch('getInfo');
-
+      console.log(role, 'dynamically change roles');
       const roles = [role.name];
       const permissions = role.permissions.map(permission => permission.name);
       commit('SET_ROLES', roles);
@@ -133,7 +151,7 @@ const actions = {
       const accessRoutes = await store.dispatch('permission/generateRoutes', { roles, permissions });
 
       // dynamically add accessible routes
-      router.addRoutes(accessRoutes);
+      router.addRoute(accessRoutes);
 
       resolve();
     });

@@ -12,7 +12,7 @@ const getters = {
   user: state => state.user.user,
   introduction: state => state.user.introduction,
   roles: state => state.user.roles,
-  permissions: state => state.user.permissions,
+  permissions: state => state.user.permissions.length,
   permissionRoutes: state => state.permission.routes,
   addRoutes: state => state.permission.addRoutes,
 };

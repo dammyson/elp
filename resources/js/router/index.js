@@ -92,19 +92,6 @@ export const constantRoutes = [
       },
     ],
   },
-  // {
-  //   path: '/documentation',
-  //   component: Layout,
-  //   redirect: '/documentation/index',
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       component: () => import('@/views/documentation/index'),
-  //       name: 'Documentation',
-  //       meta: { title: 'documentation', icon: 'documentation', noCache: true },
-  //     },
-  //   ],
-  // },
   {
     path: '/profile',
     component: Layout,
@@ -118,20 +105,6 @@ export const constantRoutes = [
       },
     ],
   },
-  // {
-  //   path: '/guide',
-  //   component: Layout,
-  //   redirect: '/guide/index',
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       component: () => import('@/views/guide/index'),
-  //       name: 'Guide',
-  //       meta: { title: 'guide', icon: 'guide', noCache: true },
-  //     },
-  //   ],
-  // },
-  // elementUiRoutes,
 ];
 
 export const asyncRoutes = [
