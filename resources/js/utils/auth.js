@@ -1,15 +1,14 @@
-import Cookies from 'js-cookie';
 
-const TokenKey = 'isLogged';
+const TokenKey = 'Token';
 
 export function isLogged() {
-  return Cookies.get(TokenKey) === '1';
+  return localStorage.getItem(TokenKey) !== null;
 }
 
 export function setLogged(isLogged) {
-  return Cookies.set(TokenKey, isLogged);
+  return localStorage.setItem(TokenKey, isLogged);
 }
 
 export function removeToken() {
-  return Cookies.remove(TokenKey);
+  return localStorage.removeItem(TokenKey);
 }

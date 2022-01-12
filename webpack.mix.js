@@ -1,26 +1,27 @@
 const config = require('./webpack.config');
-const mix = require('laravel-mix');
+const Mix = require('laravel-mix');
 require('laravel-mix-eslint');
+// const path = require('path');
 
-function resolve(dir) {
-  return path.join(
-    __dirname,
-    '/resources/js',
-    dir
-  );
-}
+// function resolve(dir) {
+//   return path.join(
+//     __dirname,
+//     '/resources/js',
+//     dir
+//   );
+// }
 
-Mix.listen('configReady', webpackConfig => {
-  // Add "svg" to image loader test
-  const imageLoaderConfig = webpackConfig.module.rules.find(
-    rule =>
-      String(rule.test) ===
-      String(/(\.(png|jpe?g|gif|webp)$|^((?!font).)*\.svg$)/)
-  );
-  imageLoaderConfig.exclude = resolve('icons');
-});
+// Mix.listen('configReady', webpackConfig => {
+//   // Add "svg" to image loader test
+//   const imageLoaderConfig = webpackConfig.module.rules.find(
+//     rule =>
+//       String(rule.test) ===
+//       String(/(\.(png|jpe?g|gif|webp)$|^((?!font).)*\.svg$)/)
+//   );
+//   imageLoaderConfig.exclude = resolve('icons');
+// });
 
-mix.webpackConfig(config);
+Mix.webpackConfig(config);
 
 /*
  |--------------------------------------------------------------------------
@@ -33,22 +34,22 @@ mix.webpackConfig(config);
  |
  */
 
-mix
+Mix
   .js('resources/js/app.js', 'public/js')
   .extract([
     'vue',
-    'axios',
-    'vuex',
-    'vue-router',
-    'vue-i18n',
-    'element-ui',
-    'echarts',
-    'highlight.js',
-    'sortablejs',
-    'dropzone',
-    'xlsx',
-    'tui-editor',
-    'codemirror',
+    // 'axios',
+    // 'vuex',
+    // 'vue-router',
+    // 'vue-i18n',
+    // 'element-ui',
+    // 'echarts',
+    // 'highlight.js',
+    // 'sortablejs',
+    // 'dropzone',
+    // 'xlsx',
+    // 'tui-editor',
+    // 'codemirror',
   ])
   .options({
     processCssUrls: false,
@@ -57,16 +58,25 @@ mix
     ],
   });
 
-if (mix.inProduction()) {
-  mix.version();
+if (Mix.inProduction()) {
+  Mix.version();
 } else {
   if (process.env.LARAVUE_USE_ESLINT === 'true') {
-    mix.eslint();
+    Mix.eslint();
   }
   // Development settings
-  mix
+  Mix
     .sourceMaps()
     .webpackConfig({
       devtool: 'cheap-eval-source-map', // Fastest for development
     });
 }
+
+// const Mix = require('laravel-Mix');
+// Mix.js('resources/js/app.js', 'public/js')
+//   .sass('resources/sass/app.scss', 'public/css')
+//   .sourceMaps();
+
+// if (Mix.inProduction()) {
+//   Mix.version();
+// }
