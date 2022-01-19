@@ -27,7 +27,8 @@
           <template slot="button-content">
             <span id="profileDropdown" class="nav-link dropdown-toggle" href="javascript:void(0);" data-toggle="dropdown" aria-expanded="false">
               <div class="nav-profile-img">
-                <img src="@/assets/images/faces/face1.jpg" alt="image">
+                <img :src="require('../../assets/images/faces/face1.jpg').default" alt="image">
+                <!-- <img src="../../assets/images/faces/face1.jpg" alt="image"> -->
                 <span class="availability-status online" />
               </div>
               <div class="nav-profile-text">
@@ -54,7 +55,7 @@
           <h6 class="p-3 mb-0">Messages</h6>
           <b-dropdown-item class="preview-item">
             <div class="preview-thumbnail">
-              <img src="@/assets/images/faces/face1.jpg" alt="image" class="profile-pic">
+              <img src="../../assets/images/faces/face1.jpg" alt="image" class="profile-pic">
             </div>
             <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
               <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>

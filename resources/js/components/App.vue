@@ -1,5 +1,4 @@
-/* eslint-disable vue/name-property-casing */
-/* eslint-disable vue/name-property-casing */
+
 <template>
   <div id="app">
     <router-view />
@@ -9,8 +8,7 @@
 <script>
 
 export default ({
-  // eslint-disable-next-line vue/name-property-casing
-  name: 'app',
+  name: 'App',
   components: {
   },
 });

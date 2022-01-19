@@ -1,5 +1,5 @@
 const config = require('./webpack.config');
-const Mix = require('laravel-mix');
+const mix = require('laravel-mix');
 require('laravel-mix-eslint');
 // const path = require('path');
 
@@ -11,6 +11,7 @@ require('laravel-mix-eslint');
 //   );
 // }
 
+// eslint-disable-next-line no-undef
 // Mix.listen('configReady', webpackConfig => {
 //   // Add "svg" to image loader test
 //   const imageLoaderConfig = webpackConfig.module.rules.find(
@@ -18,10 +19,10 @@ require('laravel-mix-eslint');
 //       String(rule.test) ===
 //       String(/(\.(png|jpe?g|gif|webp)$|^((?!font).)*\.svg$)/)
 //   );
-//   imageLoaderConfig.exclude = resolve('icons');
+//   // imageLoaderConfig.exclude = resolve('icons');
 // });
 
-Mix.webpackConfig(config);
+mix.webpackConfig(config);
 
 /*
  |--------------------------------------------------------------------------
@@ -34,7 +35,7 @@ Mix.webpackConfig(config);
  |
  */
 
-Mix
+mix
   .js('resources/js/app.js', 'public/js')
   .extract([
     'vue',
@@ -58,25 +59,16 @@ Mix
     ],
   });
 
-if (Mix.inProduction()) {
-  Mix.version();
+if (mix.inProduction()) {
+  mix.version();
 } else {
   if (process.env.LARAVUE_USE_ESLINT === 'true') {
-    Mix.eslint();
+    mix.eslint();
   }
   // Development settings
-  Mix
+  mix
     .sourceMaps()
     .webpackConfig({
       devtool: 'cheap-eval-source-map', // Fastest for development
     });
 }
-
-// const Mix = require('laravel-Mix');
-// Mix.js('resources/js/app.js', 'public/js')
-//   .sass('resources/sass/app.scss', 'public/css')
-//   .sourceMaps();
-
-// if (Mix.inProduction()) {
-//   Mix.version();
-// }

@@ -71,8 +71,8 @@ router.beforeEach((to, from, next) => {
     console.log('not authenticated');
     NProgress.done();
   } else {
-    const UserInfo = store.dispatch('User/getInfo');
-    console.log(UserInfo, 'authenticated');
+    // const UserInfo = store.dispatch('User/getInfo');
+    // console.log(UserInfo, 'authenticated');
     next() // go to wherever I'm going
     NProgress.done();
   }
