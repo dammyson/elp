@@ -8,6 +8,14 @@ export function login(data) {
   });
 }
 
+export function register(data) {
+  return request({
+    url: '/registration',
+    method: 'post',
+    data: data,
+  });
+}
+
 export function getInfo(token) {
   return request({
     url: '/users',
@@ -17,14 +25,8 @@ export function getInfo(token) {
 
 export function logout() {
   return request({
-    url: '/api/logout',
+    url: '/logout',
     method: 'post',
   });
 }
 
-export function csrf() {
-  return request({
-    url: '/sanctum/csrf-cookie',
-    method: 'get',
-  });
-}

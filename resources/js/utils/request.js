@@ -1,6 +1,6 @@
 import '@/bootstrap';
 import { Message } from 'element-ui';
-// import { isLogged, setLogged } from '@/utils/auth';
+import { isLogged } from '@/utils/auth';
 
 // Create axios instance
 const service = window.axios.create({
@@ -11,9 +11,13 @@ const service = window.axios.create({
 // Request intercepter
 service.interceptors.request.use(
   config => {
-    // const token = isLogged();
-    // if (token) {
-    //   config.headers['Authorization'] = 'Bearer ' + isLogged(); // Set JWT token
+    const token = isLogged();
+    if (token) {
+      config.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('Token');
+    }
+    // const accessToken = localStorage.getItem('Token');
+    // if (accessToken) {
+    //   config.headers = Object.assign({ Authorization: `Bearer ${accessToken}` }, config.headers);
     // }
     return config;
   },
@@ -31,21 +35,32 @@ service.interceptors.response.use(
     //   setLogged(response.headers.authorization);
     //   response.data.token = response.headers.authorization;
     // }
-
+    // const message = response.data.message;
+    // Message({
+    //   message: `${message}`,
+    //   type: 'success',
+    //   duration: 5 * 1000,
+    // });
     return response.data;
   },
   error => {
     let message = error.message;
+
     if (error.response.data && error.response.data.errors) {
       message = error.response.data.errors;
     } else if (error.response.data && error.response.data.error) {
       message = error.response.data.error;
     }
-
-    Message({
-      message: message,
-      type: 'error',
-      duration: 5 * 1000,
+    const keys = Object.keys(error.response.data.errors);
+    keys.forEach((key, index) => {
+      console.log(`${key}:${message[key]}`);
+      setTimeout(() => {
+        Message({
+          message: `${message[key]}`,
+          type: 'error',
+          duration: 5 * 1000,
+        });
+      }, 100);
     });
     return Promise.reject(error);
   }
