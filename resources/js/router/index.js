@@ -95,17 +95,22 @@ router.beforeEach((to, from, next) => {
 
   // this route requires auth, check if logged in
   // if not, redirect to login page.
-  if (requiresAuth && loggedIN) {
+  // if (requiresAuth && !loggedIN) next({ name: 'Login' })
+  // else next();
+
+  if (requiresAuth && !loggedIN) {
+    next({ name: 'Login' })
+    console.log(requiresAuth && !loggedIN, 'redirected');
+    NProgress.done();
+    console.log(requiresAuth && !loggedIN);
+  } else {
     const UserInfo = store.dispatch('User/getInfo');
     console.log(UserInfo, 'authenticated');
     next() // go to wherever I'm going
     NProgress.done();
-  } else {
-    next({ name: 'Login' })
-    NProgress.done();
-    console.log('not authenticated');
   }
   console.log('requires auth');
+  console.log(requiresAuth && !loggedIN, 'auth');
 });
 
 export function resetRouter() {
