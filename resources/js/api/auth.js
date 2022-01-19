@@ -29,4 +29,10 @@ export function logout() {
     method: 'post',
   });
 }
+export function invite() {
+  return request({
+    url: '/',
+    method: 'post',
+  });
+}
 

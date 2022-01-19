@@ -1,6 +1,6 @@
 // import axios from 'axios';
 // import store from '@/store';
-import { login, logout, getInfo, register } from '@/api/auth';
+import { login, logout, getInfo, register, invite } from '@/api/auth';
 import { resetRouter } from '@/router';
 const state = {
   user: {
@@ -127,6 +127,7 @@ const actions = {
           commit('SET_ROLES', response.data[0].roles);
           commit('SET_PERMISSIONS', response.data[0].permissions);
           commit('SET_NAME', response.data[0].name);
+          commit('SET_EMAIL', response.data[0].email);
           commit('SET_AVATAR', response.data[0].avatar);
           commit('SET_ID', response.data[0].id);
           resolve(data);
@@ -136,7 +137,17 @@ const actions = {
         });
     });
   },
-
+  inviteTeam({ commit, state }) {
+    return new Promise((resolve, reject) => {
+      invite()
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    });
+  },
 };
 const mutations = {
   SET_ID: (state, id) => {
@@ -150,6 +161,9 @@ const mutations = {
   },
   SET_NAME: (state, name) => {
     state.user.name = name;
+  },
+  SET_EMAIL: (state, email) => {
+    state.user.email = email;
   },
   SET_AVATAR: (state, avatar) => {
     state.user.avatar = avatar;

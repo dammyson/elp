@@ -9,12 +9,12 @@
         <li class="nav-item nav-profile">
           <a href="javascript:void(0);" class="nav-link">
             <div class="nav-profile-image">
-              <img src="@/assets/images/faces/face1.jpg" alt="profile">
+              <img :src="require('../../assets/images/faces/face1.jpg').default" alt="profile">
               <span class="login-status online" />
             </div>
             <div class="nav-profile-text d-flex flex-column">
-              <span class="font-weight-bold mb-2">David Grey. H</span>
-              <span class="text-secondary text-small">Project Manager</span>
+              <span class="font-weight-bold mb-2">{{ this.$store.state.User.user.name }}</span>
+              <span class="text-secondary text-small capitalize">{{ this.$store.state.User.user.roles[0] }}</span>
             </div>
             <i class="mdi mdi-bookmark-check text-success nav-profile-badge" />
           </a>
@@ -25,23 +25,29 @@
             <i class="mdi mdi-home menu-icon" />
           </router-link>
         </li>
-        <!-- <li class="nav-item sidebar-actions">
-          <span class="nav-link">
-            <div class="border-bottom">
-              <h6 class="font-weight-normal mb-3">Projects</h6>
-            </div>
-            <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a project</button>
-            <div class="mt-4">
-              <div class="border-bottom">
-                <p class="text-secondary">Categories</p>
-              </div>
-              <ul class="gradient-bullet-list mt-4">
-                <li>Free</li>
-                <li>Pro</li>
-              </ul>
-            </div>
-          </span>
+        <!-- <li class="nav-item" @click="collapseAll">
+          <router-link class="nav-link" to="/settings">
+            <span class="menu-title">Settings</span>
+            <i class="mdi mdi-setting menu-icon" />
+          </router-link>
         </li> -->
+        <li class="nav-item">
+          <span v-b-toggle="'charts-dropdown'" class="nav-link">
+            <span class="menu-title">Settings</span>
+            <i class="menu-arrow" />
+            <i class="mdi mdi-settings menu-icon" />
+          </span>
+          <b-collapse id="charts-dropdown" accordion="sidebar-accordion">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item">
+                <router-link class="nav-link" to="/profile">Profile</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link" to="/team">Team</router-link>
+              </li>
+            </ul>
+          </b-collapse>
+        </li>
       </ul>
     </nav>
   </section>
