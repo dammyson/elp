@@ -2,10 +2,10 @@
   <b-navbar id="template-header" class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row" toggleable="lg">
     <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
       <router-link class="navbar-brand brand-logo" to="/">
-        <img src="@/assets/images/logo.svg" alt="logo">
+        <img :src="require('../../assets/images/logo.svg').default" alt="logo">
       </router-link>
       <router-link class="navbar-brand brand-logo-mini" to="/">
-        <img src="@/assets/images/logo-mini.svg" alt="logo">
+        <img :src="require('../../assets/images/logo-mini.svg').default" alt="logo">
       </router-link>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center ml-auto ml-lg-0">
@@ -27,7 +27,7 @@
           <template slot="button-content">
             <span id="profileDropdown" class="nav-link dropdown-toggle" href="javascript:void(0);" data-toggle="dropdown" aria-expanded="false">
               <div class="nav-profile-img">
-                <img src="@/assets/images/faces/face1.jpg" alt="image">
+                <img :src="require('../../assets/images/faces/face1.jpg').default" alt="image">
                 <span class="availability-status online" />
               </div>
               <div class="nav-profile-text">
@@ -54,7 +54,7 @@
           <h6 class="p-3 mb-0">Messages</h6>
           <b-dropdown-item class="preview-item">
             <div class="preview-thumbnail">
-              <img src="@/assets/images/faces/face1.jpg" alt="image" class="profile-pic">
+              <img :src="require('../../assets/images/faces/face1.jpg').default" alt="image" class="profile-pic">
             </div>
             <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
               <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
@@ -63,7 +63,7 @@
           </b-dropdown-item>
           <b-dropdown-item class="preview-item">
             <div class="preview-thumbnail">
-              <img src="@/assets/images/faces/face2.jpg" alt="image" class="profile-pic">
+              <img :src="require('../../assets/images/faces/face2.jpg').default" alt="image" class="profile-pic">
             </div>
             <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
               <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
@@ -72,7 +72,7 @@
           </b-dropdown-item>
           <b-dropdown-item class="preview-item">
             <div class="preview-thumbnail">
-              <img src="@/assets/images/faces/face3.jpg" alt="image" class="profile-pic">
+              <img :src="require('../../assets/images/faces/face3.jpg').default" alt="image" class="profile-pic">
             </div>
             <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
               <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>

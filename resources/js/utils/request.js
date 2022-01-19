@@ -15,10 +15,6 @@ service.interceptors.request.use(
     if (token) {
       config.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('Token');
     }
-    // const accessToken = localStorage.getItem('Token');
-    // if (accessToken) {
-    //   config.headers = Object.assign({ Authorization: `Bearer ${accessToken}` }, config.headers);
-    // }
     return config;
   },
   error => {
@@ -51,6 +47,7 @@ service.interceptors.response.use(
     } else if (error.response.data && error.response.data.error) {
       message = error.response.data.error;
     }
+
     const keys = Object.keys(error.response.data.errors);
     keys.forEach((key, index) => {
       console.log(`${key}:${message[key]}`);

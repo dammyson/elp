@@ -27,3 +27,11 @@ Route::get('/', function () {
 Route::group(['middleware' => 'web'], function () {
     Route::get(env('LARAVUE_PATH'), [LaravueController::class,'index'])->where('any', '.*')->name('laravue');
 });
+
+Route::get('{any}', function () {
+    return view('laravue');
+})->where('any','.*');
+
+// Route::get('/{vue_capture?}', function () {
+//     return view('layouts.master');
+// })->where('vue_capture', '[\/\w\.-]*');

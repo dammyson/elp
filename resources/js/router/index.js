@@ -8,6 +8,7 @@ import Login from '../components/Login';
 // import Home from '../components/Home';
 import Logout from '../components/Logout';
 import Register from '@/pages/samples/auth-pages/register';
+// import Profile from '@/pages/dashboard/profile/profile';
 import layout from '../layout';
 import store from '../store';
 import NProgress from 'nprogress'; // progress bar
@@ -33,6 +34,34 @@ const router = new VueRouter({
           meta: {
             requiresAuth: true
           }
+        }
+      ],
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/profile',
+      component: layout,
+      children: [
+        {
+          path: '',
+          name: 'profile',
+          component: () => import('@/pages/dashboard/profile/profile'),
+        }
+      ],
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/team',
+      component: layout,
+      children: [
+        {
+          path: '',
+          name: 'team',
+          component: () => import('@/pages/dashboard/team/team'),
         }
       ],
       meta: {
@@ -66,10 +95,14 @@ router.beforeEach((to, from, next) => {
 
   // this route requires auth, check if logged in
   // if not, redirect to login page.
+  // if (requiresAuth && !loggedIN) next({ name: 'Login' })
+  // else next();
+
   if (requiresAuth && !loggedIN) {
     next({ name: 'Login' })
-    console.log('not authenticated');
+    console.log(requiresAuth && !loggedIN, 'redirected');
     NProgress.done();
+    console.log(requiresAuth && !loggedIN);
   } else {
     const UserInfo = store.dispatch('User/getInfo');
     console.log(UserInfo, 'authenticated');
@@ -77,6 +110,7 @@ router.beforeEach((to, from, next) => {
     NProgress.done();
   }
   console.log('requires auth');
+  console.log(requiresAuth && !loggedIN, 'auth');
 });
 
 export function resetRouter() {
