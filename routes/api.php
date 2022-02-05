@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\ResidentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,4 +47,13 @@ Route::prefix('users')->group(function () {
     Route::get('/complete-account-verification/{id}', [UserController::class,'CheckCanCompleteAccount'])->name('user.complete_registration_verification')->middleware('signed'); 
     Route::get('/roles', [UserController::class,'listRoles'])->name('users.roles');
     Route::post('/account/{id}', [UserController::class,'completeRegistrationAccount'])->name('user.invitation'); 
+});
+
+
+Route::prefix('resident')->name('shipment.')->middleware(['auth:api'])->group(function () {
+    Route::post('/', [ResidentsController::class,'store'])->name('store');
+    // Route::post('/pay', [ShipmentController::class,'pay'])->name('pay');
+     Route::get('/', [ResidentsController::class,'index'])->name('list');
+     Route::get('/{id}', [ResidentsController::class,'show'])->name('show');
+    // Route::post('/update_status', [DriverShipmentController::class,'updateShipmentStatus'])->name('pick');
 });
