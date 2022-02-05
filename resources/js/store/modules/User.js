@@ -1,6 +1,6 @@
 // import axios from 'axios';
 // import store from '@/store';
-import { login, logout, getInfo, register, invite } from '@/api/auth';
+import { login, logout, getInfo, register, invite, list } from '@/api/auth';
 import { resetRouter } from '@/router';
 const state = {
   user: {
@@ -137,11 +137,27 @@ const actions = {
         });
     });
   },
-  inviteTeam({ commit, state }) {
+  inviteTeam({ commit, state }, data) {
     return new Promise((resolve, reject) => {
-      invite()
+      invite({
+        roles: data.roles,
+        email: data.email,
+      })
+        .then(response => {
+          console.log(data);
+          resolve(response);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    });
+  },
+  listUsers({ commit, state }){
+    return new Promise((resolve, reject) => {
+      list()
         .then(response => {
           console.log(response);
+          resolve(response);
         })
         .catch(error => {
           console.log(error);

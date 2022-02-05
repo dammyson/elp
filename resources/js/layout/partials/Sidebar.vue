@@ -25,12 +25,23 @@
             <i class="mdi mdi-home menu-icon" />
           </router-link>
         </li>
-        <!-- <li class="nav-item" @click="collapseAll">
-          <router-link class="nav-link" to="/settings">
-            <span class="menu-title">Settings</span>
-            <i class="mdi mdi-setting menu-icon" />
-          </router-link>
-        </li> -->
+        <li class="nav-item">
+          <span v-b-toggle="'charts-dropdown'" class="nav-link">
+            <span class="menu-title">Residents</span>
+            <i class="menu-arrow" />
+            <i class="mdi mdi-settings menu-icon" />
+          </span>
+          <b-collapse id="charts-dropdown" accordion="sidebar-accordion">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item">
+                <router-link class="nav-link" to="/residents">Residents Listing</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link" to="/manageresidents/">Manage Residents</router-link>
+              </li>
+            </ul>
+          </b-collapse>
+        </li>
         <li class="nav-item">
           <span v-b-toggle="'charts-dropdown'" class="nav-link">
             <span class="menu-title">Settings</span>

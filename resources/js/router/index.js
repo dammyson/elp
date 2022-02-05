@@ -55,6 +55,34 @@ const router = new VueRouter({
       }
     },
     {
+      path: '/residents',
+      component: layout,
+      children: [
+        {
+          path: '',
+          name: 'residents',
+          component: () => import('@/pages/dashboard/residents/residents'),
+        }
+      ],
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/manageresidents',
+      component: layout,
+      children: [
+        {
+          path: '',
+          name: 'manageresidents',
+          component: () => import('@/pages/dashboard/residents/manageresidents'),
+        }
+      ],
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: '/team',
       component: layout,
       children: [
@@ -82,6 +110,11 @@ const router = new VueRouter({
       path: '/register',
       name: 'register',
       component: Register,
+    },
+    {
+      path: '/complete_invite',
+      name: 'complete_invite',
+      component: () => import('@/pages/dashboard/completeinvite/complete'),
     }
   ]
 })

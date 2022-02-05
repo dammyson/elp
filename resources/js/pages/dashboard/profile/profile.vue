@@ -92,10 +92,14 @@ export default {
           AccessType: this.$store.state.User.user.roles[0],
         },
       options: [
-        { value: 'admin', text: 'Admin level 1' },
-        { value: 'admin_2', text: 'Admin level 2' },
-        { value: 'admin_3', text: 'Admin level 3' },
+        { value: 'admin', text: 'Admin' },
+        { value: 'finance', text: 'Finance' },
+        { value: 'planner', text: 'Planner' },
       ],
+      invite: {
+        email: '',
+        roles: [],
+      },
     };
   },
   computed: {
@@ -105,6 +109,17 @@ export default {
       } else {
         return null;
       }
+    },
+  },
+  methods: {
+    inviteMember() {
+      this.$store.dispatch('User/inviteTeam', this.invite)
+        .then(response => {
+          console.log(response);
+        })
+        .catch(err => {
+          console.log(err);
+        });
     },
   },
 };
