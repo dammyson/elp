@@ -1,19 +1,19 @@
 <template>
 
   <section class="code-mirror-editor">
-    <codemirror v-model="code" :options="cmOptions"></codemirror>
+    <codemirror v-model="code" :options="cmOptions" />
   </section>
 
 </template>
 
 <script>
-import { codemirror } from 'vue-codemirror'
+import { codemirror } from 'vue-codemirror';
 export default {
-  name: 'code-mirror-editor',
+  name: 'CodeMirrorEditor',
   components: {
-    codemirror
+    codemirror,
   },
-  data () {
+  data() {
     return {
       code: 'qwETARHDGFN',
       cmOptions: {
@@ -21,9 +21,9 @@ export default {
         mode: 'html',
         theme: 'base16-dark',
         lineNumbers: true,
-        line: true
-      }
-    }
-  }
-}
+        line: true,
+      },
+    };
+  },
+};
 </script>

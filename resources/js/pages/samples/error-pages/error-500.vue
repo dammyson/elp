@@ -38,6 +38,6 @@
 
 <script>
 export default {
-  name: 'error_500'
-}
+  name: 'Error500',
+};
 </script>

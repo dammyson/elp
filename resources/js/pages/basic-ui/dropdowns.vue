@@ -25,7 +25,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -33,7 +33,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -41,7 +41,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -49,7 +49,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -57,7 +57,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -65,7 +65,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -81,7 +81,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -89,7 +89,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -97,7 +97,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -105,7 +105,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -113,7 +113,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -121,7 +121,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -137,7 +137,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -145,7 +145,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -153,7 +153,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -161,7 +161,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -169,7 +169,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -177,7 +177,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -197,7 +197,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -205,7 +205,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -213,7 +213,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -221,7 +221,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -229,7 +229,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -237,7 +237,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -255,89 +255,89 @@
             <div class="template-demo">
               <b-dropdown id="ddown19" variant="gradient-warning">
                 <template slot="button-content">
-                  <i class="mdi mdi-earth"></i>
+                  <i class="mdi mdi-earth" />
                 </template>
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
               <b-dropdown id="ddown20" variant="gradient-danger">
                 <template slot="button-content">
-                  <i class="mdi mdi-trophy-outline"></i>
+                  <i class="mdi mdi-trophy-outline" />
                 </template>
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
               <b-dropdown id="ddown21" variant="gradient-secondary">
                 <template slot="button-content">
-                  <i class="mdi mdi-email"></i>
+                  <i class="mdi mdi-email" />
                 </template>
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
               <b-dropdown id="ddown22" variant="gradient-success">
                 <template slot="button-content">
-                  <i class="mdi mdi-heart"></i>
+                  <i class="mdi mdi-heart" />
                 </template>
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
               <b-dropdown id="ddown23" variant="gradient-warning">
                 <template slot="button-content">
-                  <i class="mdi mdi-logout"></i>
+                  <i class="mdi mdi-logout" />
                 </template>
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
               <b-dropdown id="ddown24" variant="gradient-primary">
                 <template slot="button-content">
-                  <i class="mdi mdi-security"></i>
+                  <i class="mdi mdi-security" />
                 </template>
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
               <b-dropdown id="ddown25" variant="gradient-dark">
                 <template slot="button-content">
-                  <i class="mdi mdi-account"></i>
+                  <i class="mdi mdi-account" />
                 </template>
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
               <b-dropdown id="ddown26" variant="gradient-info">
                 <template slot="button-content">
-                  <i class="mdi mdi-bell"></i>
+                  <i class="mdi mdi-bell" />
                 </template>
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -357,7 +357,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -365,7 +365,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -373,7 +373,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -381,7 +381,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -389,7 +389,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -397,7 +397,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -417,7 +417,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -425,7 +425,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -433,7 +433,7 @@
                 <b-dropdown-item>Settings</b-dropdown-item>
                 <b-dropdown-item>Action</b-dropdown-item>
                 <b-dropdown-item>Another action</b-dropdown-item>
-                <b-dropdown-divider></b-dropdown-divider>
+                <b-dropdown-divider />
                 <b-dropdown-item>Something else here...</b-dropdown-item>
                 <b-dropdown-item disabled>Disabled action</b-dropdown-item>
               </b-dropdown>
@@ -448,6 +448,6 @@
 
 <script>
 export default {
-  name: 'dropdowns'
-}
+  name: 'Dropdowns',
+};
 </script>

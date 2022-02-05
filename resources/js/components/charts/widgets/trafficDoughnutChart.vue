@@ -1,23 +1,23 @@
 <script>
 import {
-  Doughnut
-} from 'vue-chartjs'
+  Doughnut,
+} from 'vue-chartjs';
 
 export default {
   extends: Doughnut,
-  data () {
+  data() {
     return {
       datacollection: {
         datasets: [{
           data: [70, 20],
           backgroundColor: [
             'rgb(0,143,251)',
-            'rgb(0,224,147)'
+            'rgb(0,224,147)',
           ],
           borderColor: [
             'rgb(0,143,251)',
-            'rgb(0,224,147)'
-          ]
+            'rgb(0,224,147)',
+          ],
         }],
 
         // These labels appear in the legend and in the tooltips when hovering different arcs
@@ -26,8 +26,8 @@ export default {
           'Firefox',
           'Safari',
           'Opera',
-          'IE'
-        ]
+          'IE',
+        ],
       },
       options: {
         cutoutPercentage: 70,
@@ -38,21 +38,21 @@ export default {
         maintainAspectRatio: true,
         showScale: true,
         legend: {
-          display: false
+          display: false,
         },
         layout: {
           padding: {
             left: 0,
             right: 0,
             top: 0,
-            bottom: 0
-          }
-        }
-      }
-    }
+            bottom: 0,
+          },
+        },
+      },
+    };
   },
-  mounted () {
-    this.renderChart(this.datacollection, this.options)
-  }
-}
+  mounted() {
+    this.renderChart(this.datacollection, this.options);
+  },
+};
 </script>

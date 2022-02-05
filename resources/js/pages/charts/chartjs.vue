@@ -16,7 +16,7 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Line chart</h4>
-            <line-chart :height="250"></line-chart>
+            <line-chart :height="250" />
           </div>
         </div>
       </div>
@@ -24,7 +24,7 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Bar chart</h4>
-            <bar-chart :height="250"></bar-chart>
+            <bar-chart :height="250" />
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Area chart</h4>
-            <area-chart :height="250"></area-chart>
+            <area-chart :height="250" />
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Doughnut chart</h4>
-            <doughnut-chart :height="200"></doughnut-chart>
+            <doughnut-chart :height="200" />
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Pie chart</h4>
-            <pie-chart :height="200"></pie-chart>
+            <pie-chart :height="200" />
           </div>
         </div>
       </div>
@@ -60,7 +60,7 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Scatter chart</h4>
-            <scatter-chart :height="200"></scatter-chart>
+            <scatter-chart :height="200" />
           </div>
         </div>
       </div>
@@ -69,21 +69,21 @@
 </template>
 
 <script>
-import lineChart from '../../components/charts/chartjs/lineChart'
-import barChart from '../../components/charts/chartjs/barChart'
-import areaChart from '../../components/charts/chartjs/areaChart'
-import doughnutChart from '../../components/charts/chartjs/doughnutChart'
-import pieChart from '../../components/charts/chartjs/pieChart'
-import scatterChart from '../../components/charts/chartjs/scatterChart'
+import lineChart from '../../components/charts/chartjs/lineChart';
+import barChart from '../../components/charts/chartjs/barChart';
+import areaChart from '../../components/charts/chartjs/areaChart';
+import doughnutChart from '../../components/charts/chartjs/doughnutChart';
+import pieChart from '../../components/charts/chartjs/pieChart';
+import scatterChart from '../../components/charts/chartjs/scatterChart';
 export default {
-  name: 'chartjs',
+  name: 'Chartjs',
   components: {
     lineChart,
     barChart,
     areaChart,
     doughnutChart,
     pieChart,
-    scatterChart
-  }
-}
+    scatterChart,
+  },
+};
 </script>

@@ -2,31 +2,31 @@
 <template>
 
   <section class="custom-success-slider">
-    <vue-slide-bar class="pt-3" v-model="sliderCustomzie.val" :min="1" :max="10" :processStyle="sliderCustomzie.processStyle" :lineHeight="sliderCustomzie.lineHeight" :tooltipStyles="sliderCustomzie.tooltipStyles" />
+    <vue-slide-bar v-model="sliderCustomzie.val" class="pt-3" :min="1" :max="10" :process-style="sliderCustomzie.processStyle" :line-height="sliderCustomzie.lineHeight" :tooltip-styles="sliderCustomzie.tooltipStyles" />
   </section>
 
 </template>
 
 <script>
-import VueSlideBar from 'vue-slide-bar'
+import VueSlideBar from 'vue-slide-bar';
 export default {
   components: {
-    VueSlideBar
+    VueSlideBar,
   },
-  data () {
+  data() {
     return {
       sliderCustomzie: {
         val: 9,
         lineHeight: 10,
         processStyle: {
-          backgroundColor: '#00e093'
+          backgroundColor: '#00e093',
         },
         tooltipStyles: {
           backgroundColor: '#00e093',
-          borderColor: '#00e093'
-        }
-      }
-    }
-  }
-}
+          borderColor: '#00e093',
+        },
+      },
+    };
+  },
+};
 </script>

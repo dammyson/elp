@@ -1,22 +1,22 @@
 <template>
 
   <section class="simple-slider">
-    <vue-slide-bar class="pt-3" v-model="simpleValue"/>
+    <vue-slide-bar v-model="simpleValue" class="pt-3" />
   </section>
 
 </template>
 
 <script>
-import VueSlideBar from 'vue-slide-bar'
+import VueSlideBar from 'vue-slide-bar';
 export default {
-  name: 'simple-slider',
+  name: 'SimpleSlider',
   components: {
-    VueSlideBar
+    VueSlideBar,
   },
-  data () {
+  data() {
     return {
-      simpleValue: 50
-    }
-  }
-}
+      simpleValue: 50,
+    };
+  },
+};
 </script>

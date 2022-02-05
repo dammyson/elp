@@ -1,11 +1,11 @@
 <script>
 import {
-  Line
-} from 'vue-chartjs'
+  Line,
+} from 'vue-chartjs';
 
 export default {
   extends: Line,
-  data () {
+  data() {
     return {
       datacollection: {
         labels: ['2013', '2014', '2014', '2015', '2016', '2017', '2018'],
@@ -15,7 +15,7 @@ export default {
           backgroundColor: 'rgba(52,110,240,0.7)',
           borderColor: 'rgba(52,110,240,0.8)',
           borderWidth: 2,
-          fill: true
+          fill: true,
         },
         {
           label: 'Product',
@@ -23,35 +23,35 @@ export default {
           backgroundColor: 'rgba(0,187,248,0.7)',
           borderColor: 'rgba(0,187,248,0.8)',
           borderWidth: 2,
-          fill: true
-        }]
+          fill: true,
+        }],
       },
       options: {
         scales: {
           yAxes: [{
-            display: false
+            display: false,
           }],
           xAxes: [{
-            display: false
-          }]
+            display: false,
+          }],
         },
         legend: {
-          display: false
+          display: false,
         },
         elements: {
           point: {
-            radius: 3
+            radius: 3,
           },
           line: {
-            tension: 0
-          }
+            tension: 0,
+          },
         },
-        stepsize: 1
-      }
-    }
+        stepsize: 1,
+      },
+    };
   },
-  mounted () {
-    this.renderChart(this.datacollection, this.options)
-  }
-}
+  mounted() {
+    this.renderChart(this.datacollection, this.options);
+  },
+};
 </script>

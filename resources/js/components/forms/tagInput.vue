@@ -11,16 +11,16 @@
 </template>
 
 <script>
-import VueTagsInput from '@johmun/vue-tags-input'
+import VueTagsInput from '@johmun/vue-tags-input';
 export default {
   components: {
-    VueTagsInput
+    VueTagsInput,
   },
-  data () {
+  data() {
     return {
       tag: '',
-      tags: [ {"text":"London","tiClasses":["ti-valid"]},{"text":"Cananda","tiClasses":["ti-valid"]}, {"text":"Australia","tiClasses":["ti-valid"]}, {"text":"Mexico","tiClasses":["ti-valid"]}]
-    }
-  }
-}
+      tags: [{ 'text': 'London', 'tiClasses': ['ti-valid'] }, { 'text': 'Cananda', 'tiClasses': ['ti-valid'] }, { 'text': 'Australia', 'tiClasses': ['ti-valid'] }, { 'text': 'Mexico', 'tiClasses': ['ti-valid'] }],
+    };
+  },
+};
 </script>

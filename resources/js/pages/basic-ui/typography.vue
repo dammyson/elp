@@ -122,7 +122,7 @@
                 <div class="row">
                   <div class="col-md-4 d-flex align-items-center">
                     <div class="d-flex flex-row align-items-center">
-                      <i class="mdi mdi-compass icon-lg text-warning"></i>
+                      <i class="mdi mdi-compass icon-lg text-warning" />
                       <p class="mb-0 ml-1">
                         Icon-lg
                       </p>
@@ -130,7 +130,7 @@
                   </div>
                   <div class="col-md-4 d-flex align-items-center">
                     <div class="d-flex flex-row align-items-center">
-                      <i class="mdi mdi-compass icon-md text-success"></i>
+                      <i class="mdi mdi-compass icon-md text-success" />
                       <p class="mb-0 ml-1">
                         Icon-md
                       </p>
@@ -138,7 +138,7 @@
                   </div>
                   <div class="col-md-4 d-flex align-items-center">
                     <div class="d-flex flex-row align-items-center">
-                      <i class="mdi mdi-compass icon-sm text-danger"></i>
+                      <i class="mdi mdi-compass icon-sm text-danger" />
                       <p class="mb-0 ml-1">
                         Icon-sm
                       </p>
@@ -184,7 +184,7 @@
                     695 lsom Ave,
                   </p>
                   <p>
-                     Suite 00
+                    Suite 00
                   </p>
                   <p>
                     San Francisco, CA 94107
@@ -215,7 +215,7 @@
               Use class <code>.lead</code>
             </p>
             <p class="lead">
-                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+              Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
             </p>
           </div>
         </div>
@@ -251,7 +251,7 @@
           <div class="card-body">
             <h4 class="card-title">Top aligned media</h4>
             <div class="media">
-              <i class="mdi mdi-earth icon-md text-info d-flex align-self-start mr-3"></i>
+              <i class="mdi mdi-earth icon-md text-info d-flex align-self-start mr-3" />
               <div class="media-body">
                 <p class="card-text">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque.</p>
               </div>
@@ -264,7 +264,7 @@
           <div class="card-body">
             <h4 class="card-title">Center aligned media</h4>
             <div class="media">
-              <i class="mdi mdi-earth icon-md text-info d-flex align-self-center mr-3"></i>
+              <i class="mdi mdi-earth icon-md text-info d-flex align-self-center mr-3" />
               <div class="media-body">
                 <p class="card-text">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque.</p>
               </div>
@@ -277,7 +277,7 @@
           <div class="card-body">
             <h4 class="card-title">Bottom aligned media</h4>
             <div class="media">
-              <i class="mdi mdi-earth icon-md text-info d-flex align-self-end mr-3"></i>
+              <i class="mdi mdi-earth icon-md text-info d-flex align-self-end mr-3" />
               <div class="media-body">
                 <p class="card-text">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque.</p>
               </div>
@@ -361,8 +361,8 @@
             </p>
             <p class="text-lowercase">
               lorem ipsum dolor sit amet, consectetur
-                mod tempor incididunt ut labore et dolore
-                magna aliqua.
+              mod tempor incididunt ut labore et dolore
+              magna aliqua.
             </p>
           </div>
           <div class="card-body">
@@ -372,8 +372,8 @@
             </p>
             <p class="text-uppercase">
               lorem ipsum dolor sit amet, consectetur
-                mod tempor incididunt ut labore et dolore
-                magna aliqua.
+              mod tempor incididunt ut labore et dolore
+              magna aliqua.
             </p>
           </div>
         </div>
@@ -387,8 +387,8 @@
             </p>
             <p class="text-muted">
               lorem ipsum dolor sit amet, consectetur
-                mod tempor incididunt ut labore et dolore
-                magna aliqua.
+              mod tempor incididunt ut labore et dolore
+              magna aliqua.
             </p>
           </div>
           <div class="card-body">
@@ -411,8 +411,8 @@
             </p>
             <p class="text-capitalize">
               lorem ipsum dolor sit amet, consectetur
-                mod tempor incididunt ut labore et dolore
-                magna aliqua.
+              mod tempor incididunt ut labore et dolore
+              magna aliqua.
             </p>
           </div>
         </div>
@@ -469,6 +469,6 @@
 
 <script>
 export default {
-  name: 'typography'
-}
+  name: 'Typography',
+};
 </script>

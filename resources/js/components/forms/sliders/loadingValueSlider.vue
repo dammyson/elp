@@ -1,36 +1,36 @@
 <template>
 
   <section class="loading-value-slider">
-    <vue-slide-bar v-model="loadingValue" :showTooltip="false" :lineHeight="20" :isDisabled="true" :processStyle="{ backgroundColor: '#35495e' }" />
-    <button class="btn btn-primary btn-sm mt-4" @click="startLoad()">Start</button>    
+    <vue-slide-bar v-model="loadingValue" :show-tooltip="false" :line-height="20" :is-disabled="true" :process-style="{ backgroundColor: '#35495e' }" />
+    <button class="btn btn-primary btn-sm mt-4" @click="startLoad()">Start</button>
   </section>
 
 </template>
 
 <script>
-import VueSlideBar from 'vue-slide-bar'
+import VueSlideBar from 'vue-slide-bar';
 export default {
   components: {
-    VueSlideBar
+    VueSlideBar,
   },
-  data () {
+  data() {
     return {
       loader: null,
-      loadingValue: 0
-    }
+      loadingValue: 0,
+    };
   },
   methods: {
-    startLoad () {
+    startLoad() {
       this.loader = setInterval(() => {
-        this.loadingValue++
+        this.loadingValue++;
         if (this.loadingValue === 100) {
           // console.log('clear', this.loadingValue)
-          clearInterval(this.loader)
+          clearInterval(this.loader);
         }
-      }, 100)
-    }
-  }
-}
+      }, 100);
+    },
+  },
+};
 </script>
 <style scoped lang="scss">
 .loading-value-slider {

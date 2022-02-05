@@ -1,8 +1,8 @@
 
 <template>
   <section class="justgageRefresh">
-    <vue-justgage ref="g2" id="g2" class="gauge" data-value="100"></vue-justgage>
-    <button href="javascript:void(0);" class="btn btn-success" @click="refresh" id="g2_refresh">Random Refresh</button>
+    <vue-justgage id="g2" ref="g2" class="gauge" data-value="100" />
+    <button id="g2_refresh" href="javascript:void(0);" class="btn btn-success" @click="refresh">Random Refresh</button>
   </section>
 </template>
 
@@ -20,21 +20,21 @@ export default {
         gaugeWidthScale: 0.6,
         counter: true,
         hideInnerShadow: true,
-      }
-    }
+      },
+    };
   },
   mounted() {
-  this.$refs.g2.draw({
+    this.$refs.g2.draw({
       id: 'g2',
       value: 100,
       title: 'refresh',
-      defaults: this.dflt
+      defaults: this.dflt,
     });
   },
   methods: {
     refresh() {
       this.$refs.g2.refresh(this.getRandomInt(0, 100));
-    }
-  }
-}
+    },
+  },
+};
 </script>

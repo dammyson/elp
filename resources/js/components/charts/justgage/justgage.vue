@@ -1,7 +1,7 @@
 
 <template>
   <section class="justgage">
-    <vue-justgage ref="g1" id="g1" class="gauge" data-value="100"></vue-justgage>
+    <vue-justgage id="g1" ref="g1" class="gauge" data-value="100" />
   </section>
 </template>
 
@@ -18,22 +18,22 @@ export default {
         donut: false,
         gaugeWidthScale: 0.6,
         counter: true,
-        hideInnerShadow: true
-      }
-    }
+        hideInnerShadow: true,
+      },
+    };
   },
   mounted() {
-  this.$refs.g1.draw({
+    this.$refs.g1.draw({
       id: 'g1',
       value: 100,
       title: 'Simple JustGage',
-      defaults: this.dflt
+      defaults: this.dflt,
     });
   },
   methods: {
     refresh() {
       this.$refs.g1.refresh(this.getRandomInt(0, 100));
-    }
-  }
-}
+    },
+  },
+};
 </script>

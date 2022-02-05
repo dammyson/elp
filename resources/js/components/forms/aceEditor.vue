@@ -1,20 +1,20 @@
 <template>
 
   <section class="ace-editor">
-    <editor v-model="content" @init="editorInit" width="100%" lang="html" theme="chrome" height="200px"></editor>
+    <editor v-model="content" width="100%" lang="html" theme="chrome" height="200px" @init="editorInit" />
   </section>
 
 </template>
 
 <script>
 export default {
-  name: 'ace-editor',
+  name: 'AceEditor',
   components: {
-    editor: require('vue2-ace-editor')
+    editor: require('vue2-ace-editor'),
   },
-  data () {
+  data() {
     return {
-        content: `
+      content: `
 <!-- Default panel -->
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -38,18 +38,18 @@ export default {
 </div>
 <!-- /default panel -->
 
-`
-    }
+`,
+    };
   },
   methods: {
-    editorInit: function () {
-      require('brace/ext/language_tools')
-      require('brace/mode/html')
-      require('brace/mode/javascript')
-      require('brace/mode/less')
-      require('brace/theme/chrome')
-      require('brace/snippets/javascript')
-    }
+    editorInit: function() {
+      require('brace/ext/language_tools');
+      require('brace/mode/html');
+      require('brace/mode/javascript');
+      require('brace/mode/less');
+      require('brace/theme/chrome');
+      require('brace/snippets/javascript');
+    },
   },
-}
+};
 </script>
