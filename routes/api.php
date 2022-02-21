@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\GroupsController;
 use App\Http\Controllers\ResidentsController;
 
 /*
@@ -56,4 +57,10 @@ Route::prefix('resident')->name('shipment.')->middleware(['auth:api'])->group(fu
      Route::get('/', [ResidentsController::class,'index'])->name('list');
      Route::get('/{id}', [ResidentsController::class,'show'])->name('show');
     // Route::post('/update_status', [DriverShipmentController::class,'updateShipmentStatus'])->name('pick');
+});
+
+Route::prefix('groups')->name('groups.')->middleware(['auth:api'])->group(function () {
+     Route::post('/', [GroupsController::class,'store'])->name('store');
+     Route::get('/', [GroupsController::class,'index'])->name('list');
+     Route::get('/{id}', [GroupsController::class,'show'])->name('show');
 });
