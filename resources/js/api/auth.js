@@ -29,10 +29,17 @@ export function logout() {
     method: 'post',
   });
 }
-export function invite() {
+export function invite(data) {
   return request({
-    url: '/',
+    url: '/users',
     method: 'post',
+    data: data,
+  });
+}
+export function list() {
+  return request({
+    url: '/users',
+    method: 'get',
   });
 }
 

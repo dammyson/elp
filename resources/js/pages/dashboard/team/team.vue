@@ -14,7 +14,7 @@
     </div>
     <b-modal id="my-modal" hide-footer>
       <b-container>
-        <b-form @submit="onSubmit" @reset="onReset">
+        <b-form @submit="inviteMember">
           <b-form-row>
             <b-col sm="12">
               <b-form-group
@@ -23,7 +23,7 @@
                 label="Role"
                 label-for="role"
               >
-                <b-form-select id="role" v-model="newTeam.role" :options="options" size="md" />
+                <b-form-select id="role" v-model="newTeam.roles" :options="options" size="md" />
               </b-form-group>
             </b-col>
             <b-col sm="12">
@@ -53,7 +53,7 @@
             <button type="button" class="btn btn btn-gradient-primary btn-rounded btn-icon btn-secondary position-absolute editbtn">
               <i class="mdi mdi-pencil" />
             </button> -->
-            <b-table responsive :items="items" />
+            <b-table responsive :items="myProvider" />
           </div>
         </div>
       </div>
@@ -67,22 +67,16 @@ export default {
   name: 'Profile',
   data() {
     return {
-      items: [
-        {
-          Name: this.$store.state.User.user.name,
-          Email: this.$store.state.User.user.email,
-          AccessType: this.$store.state.User.user.roles[0],
-        },
-      ],
-      options: [
-        { value: 'admin_1', text: 'Admin level 1' },
-        { value: 'admin_2', text: 'Admin level 2' },
-        { value: 'admin_3', text: 'Admin level 3' },
-      ],
+      items: [],
       newTeam: {
-        role: '',
+        roles: '',
         email: '',
       },
+      options: [
+        { value: 'admin', text: 'Admin' },
+        { value: 'finance', text: 'Finance' },
+        { value: 'planner', text: 'Planner' },
+      ],
     };
   },
   computed: {
@@ -94,16 +88,59 @@ export default {
       }
     },
   },
+  mounted() {
+    this.$store.dispatch('User/listUsers')
+      .then(response => {
+        console.log(response.data);
+        const data = response.data;
+        data.forEach(element => {
+          this.items[
+            element
+          ];
+        });
+        console.log(this.items);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  },
   methods: {
-    onSubmit(event) {
+    inviteMember(event) {
       event.preventDefault();
-      console.log(this.newTeam);
+      this.$store.dispatch('User/inviteTeam', this.newTeam)
+        .then(response => {
+          console.log(response);
+
+          // this.$message({
+          //   message: `${response.message}`,
+          //   type: 'success',
+          //   duration: 5 * 1000,
+          // });
+          this.$bvModal.hide('my-modal');
+        })
+        .catch(err => {
+          console.log(err);
+        });
     },
-    onReset(event) {
-      event.preventDefault();
-      // Reset our form values
-      this.newTeam.email = '';
-      this.newTeam.role = '';
+    myProvider() {
+      const promise = this.$store.dispatch('User/listUsers');
+
+      return promise.then((data) => {
+        const items = data.data;
+        items.forEach(element => {
+          this.items.push(
+            {
+              Name: element.name,
+              Email: element.email,
+              Role: element.roles[0],
+            }
+          );
+        });
+        console.log(this.items);
+        return (this.items);
+      }).catch(error => {
+        return [error];
+      });
     },
   },
 };

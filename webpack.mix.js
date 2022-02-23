@@ -1,26 +1,6 @@
 const config = require('./webpack.config');
 const mix = require('laravel-mix');
 require('laravel-mix-eslint');
-// const path = require('path');
-
-// function resolve(dir) {
-//   return path.join(
-//     __dirname,
-//     '/resources/js',
-//     dir
-//   );
-// }
-
-// eslint-disable-next-line no-undef
-// Mix.listen('configReady', webpackConfig => {
-//   // Add "svg" to image loader test
-//   const imageLoaderConfig = webpackConfig.module.rules.find(
-//     rule =>
-//       String(rule.test) ===
-//       String(/(\.(png|jpe?g|gif|webp)$|^((?!font).)*\.svg$)/)
-//   );
-//   // imageLoaderConfig.exclude = resolve('icons');
-// });
 
 mix.webpackConfig(config);
 

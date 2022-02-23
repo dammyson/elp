@@ -2,10 +2,10 @@
   <b-navbar id="template-header" class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row" toggleable="lg">
     <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
       <router-link class="navbar-brand brand-logo" to="/">
-        <img :src="require('../../assets/images/logo.svg').default" alt="logo">
+        <img :src="require('../../assets/images/logo.png').default" alt="logo">
       </router-link>
       <router-link class="navbar-brand brand-logo-mini" to="/">
-        <img :src="require('../../assets/images/logo-mini.svg').default" alt="logo">
+        <img :src="require('../../assets/images/favicon.png').default" alt="logo">
       </router-link>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center ml-auto ml-lg-0">
