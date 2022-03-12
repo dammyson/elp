@@ -29,10 +29,36 @@ export function logout() {
     method: 'post',
   });
 }
-export function invite() {
+export function invite(data) {
   return request({
-    url: '/',
+    url: '/users',
     method: 'post',
+    data: data,
+  });
+}
+export function list() {
+  return request({
+    url: '/users',
+    method: 'get',
+  });
+}
+export function resident() {
+  return request({
+    url: '/resident',
+    method: 'get',
+  });
+}
+export function getresident(data) {
+  return request({
+    url: '/resident',
+    method: 'post',
+    data: data,
+  });
+}
+export function singleresident(data) {
+  return request({
+    url: '/resident/' + data.data,
+    method: 'get',
   });
 }
 

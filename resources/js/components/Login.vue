@@ -7,7 +7,7 @@
             <div class="col-xl-4 col-lg-6 mx-auto">
               <div class="auth-form-light text-left p-5">
                 <div class="brand-logo">
-                  <!-- <img src="../../../assets/images/logo.svg"> -->
+                  <!-- <img src="../../assets/images/logo.svg"> -->
                 </div>
                 <h4>Hello! let's get started</h4>
                 <h6 class="font-weight-light">Sign in to continue.</h6>
@@ -26,6 +26,7 @@
                       <label class="form-check-label text-muted">
                         <input type="checkbox" class="form-check-input">
                         Keep me signed in
+                        {{ loading ? 'loading':'' }}
                         <i class="input-helper" />
                       </label>
                     </div>
@@ -61,6 +62,7 @@ export default {
       email: 'admin@example.com',
       password: 'admin123',
     },
+    loading: false,
   }),
   methods: {
     login() {
@@ -71,10 +73,11 @@ export default {
             type: 'success',
             duration: 5 * 1000,
           });
-
+          this.loading = true;
           this.$router.push({ name: 'dashboard' });
         });
     },
   },
 };
 </script>
+

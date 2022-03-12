@@ -34,7 +34,7 @@ class InviteService implements BaseServiceInterface
             foreach ($this->validated as $data) {
                 $roles = $data['roles'];
                 $invited_user = $this->createUnconfirmedUser($roles, $this->user->companies->first()->id, $data['email'], 'web');
-                $invited_user->notify(new SendUserInvitationMail($this->mailData($invited_user, $this->user->first_name)));
+                // $invited_user->notify(new SendUserInvitationMail($this->mailData($invited_user, $this->user->first_name)));
                 array_push($created_users, $invited_user);
                
             }
