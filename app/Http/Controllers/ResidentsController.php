@@ -48,7 +48,8 @@ class ResidentsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(StoreRequest $request)
-    {
+    { 
+        
         $validated = $request->validated();
         $user = \Auth::user();
         try {
@@ -56,8 +57,9 @@ class ResidentsController extends Controller
         } catch (\Exception $exception) {
             return response()->json(['status' => false, 'mesage' => 'Error processing request - '.$exception->getMessage(), 'data' => $exception], 500);
         }
+        // return response()->json(['status' => true, 'message' => 'New Post created'], 201);
         return response()->json(['status' => true, 'message' => 'New Post created', 'data' =>  $new_client], 201);
-        
+                
     }
 
     /**

@@ -32,10 +32,14 @@ mix
     // 'tui-editor',
     // 'codemirror',
   ])
+  // .postCss('resources/sass/app.scss', 'public/css', [
+  //   require('tailwindcss'),
+  // ])
   .options({
     processCssUrls: false,
     postCss: [
       require('autoprefixer'),
+      // require('tailwindcss'),
     ],
   });
 

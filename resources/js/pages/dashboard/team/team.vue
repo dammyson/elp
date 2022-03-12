@@ -80,6 +80,7 @@ export default {
     };
   },
   computed: {
+
     state() {
       if (this.newTeam.email !== ''){
         return true;

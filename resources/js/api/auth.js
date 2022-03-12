@@ -42,4 +42,23 @@ export function list() {
     method: 'get',
   });
 }
+export function resident() {
+  return request({
+    url: '/resident',
+    method: 'get',
+  });
+}
+export function getresident(data) {
+  return request({
+    url: '/resident',
+    method: 'post',
+    data: data,
+  });
+}
+export function singleresident(data) {
+  return request({
+    url: '/resident/' + data.data,
+    method: 'get',
+  });
+}
 
