@@ -4,12 +4,13 @@ import { isLogged } from '@/utils/auth';
 
 // Create axios instance
 const service = window.axios.create({
-  baseURL: process.env.MIX_BASE_API,
+  baseURL: '/api',
   timeout: 10000, // Request timeout
 });
 
 // Request intercepter
 service.interceptors.request.use(
+
   config => {
     const token = isLogged();
     if (token) {

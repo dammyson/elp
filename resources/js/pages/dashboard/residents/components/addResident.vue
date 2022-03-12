@@ -1,23 +1,22 @@
 <template>
   <b-form>
-    <b-form-row>
+    <b-form-row class="mb-4">
       <b-col sm="3">
         <b-form-group
           id="fieldset-1"
           label="First Name"
           label-for="role"
         >
-          <b-form-input id="firstName" v-model="Contact_Info.First_Name" :type="`text`" />
+          <b-form-input id="firstName" v-model="data.contact_Info.first_name" type="text" />
         </b-form-group>
       </b-col>
       <b-col sm="3">
         <b-form-group
           id="fieldset-1"
-          label="MID.INIT"
+          label="MIDDLE NAME"
           label-for="input-1"
-          :state="state"
         >
-          <b-form-input id="Mid" v-model="Contact_Info.MID" :type="`text`" />
+          <b-form-input id="Mid" v-model="data.contact_Info.middle_name" type="text" />
         </b-form-group>
       </b-col>
       <b-col sm="3">
@@ -25,9 +24,8 @@
           id="fieldset-1"
           label="Last Name"
           label-for="input-1"
-          :state="state"
         >
-          <b-form-input id="lastName" v-model="Contact_Info.Last_Name" :type="`text`" />
+          <b-form-input id="lastName" v-model="data.contact_Info.last_name" type="text" />
         </b-form-group>
       </b-col>
       <b-col sm="3">
@@ -36,28 +34,18 @@
           label="Nick Name"
           label-for="role"
         >
-          <b-form-input id="nickName" v-model="Contact_Info.Nick_Name" :type="`text`" />
+          <b-form-input id="nickName" v-model="data.contact_Info.nick_name" type="text" />
         </b-form-group>
       </b-col>
     </b-form-row>
-    <b-form-row>
+    <b-form-row class="mb-4">
       <b-col sm="3">
         <b-form-group
           id="fieldset-1"
           label="DATE OF BIRTH"
           label-for="role"
         >
-          <b-form-input id="Dob" v-model="Contact_Info.Date_of_Birth" :type="`date`" />
-        </b-form-group>
-      </b-col>
-      <b-col sm="3">
-        <b-form-group
-          id="fieldset-1"
-          label="ROOM"
-          label-for="input-1"
-          :state="state"
-        >
-          <b-form-input id="Room" v-model="Contact_Info.Room" :type="`number`" />
+          <b-form-input id="Dob" v-model="data.contact_Info.dob" :type="`date`" />
         </b-form-group>
       </b-col>
       <b-col sm="3">
@@ -65,9 +53,8 @@
           id="fieldset-1"
           label="ROOM PHONE"
           label-for="input-1"
-          :state="state"
         >
-          <b-form-input id="roomPhone" v-model="Contact_Info.Home_Phone" :type="`text`" />
+          <b-form-input id="roomPhone" v-model="data.contact_Info.home_phone" type="text" />
         </b-form-group>
       </b-col>
       <b-col sm="3">
@@ -75,20 +62,19 @@
           id="fieldset-1"
           label="CELL PHONE"
           label-for="input-1"
-          :state="state"
         >
-          <b-form-input id="cellPhone" v-model="Contact_Info.Mobile_Phone" :type="`text`" />
+          <b-form-input id="cellPhone" v-model="data.contact_Info.mobile_phone" type="text" />
         </b-form-group>
       </b-col>
     </b-form-row>
-    <b-form-row>
+    <b-form-row class="mb-4">
       <b-col sm="3">
         <b-form-group
           id="fieldset-1"
-          label="PLACE OF BIRTH"
+          label="SOCIAL SECUCRITY NUMBER"
           label-for="role"
         >
-          <b-form-input id="placeOfBirth" v-model="Admission_Info.Place_of_Birth" :type="`text`" />
+          <b-form-input id="SSN" v-model="data.admission_info.ssn" type="text" />
         </b-form-group>
       </b-col>
       <b-col sm="3">
@@ -97,18 +83,27 @@
           label="MID.REC.NUM."
           label-for="role"
         >
-          <b-form-input id="midRecNum" v-model="Contact_Info.MID" :type="`text`" />
+          <b-form-input id="midRecNum" v-model="data.admission_info.medica_rec_n" type="text" />
+        </b-form-group>
+      </b-col>
+      <b-col sm="3">
+        <b-form-group
+          id="fieldset-1"
+          label="MID.ID.NUM."
+          label-for="role"
+        >
+          <b-form-input id="midRecNum" v-model="data.admission_info.medical_id_no" type="text" />
         </b-form-group>
       </b-col>
     </b-form-row>
-    <b-form-row>
+    <b-form-row class="mb-4">
       <b-col sm="3">
         <b-form-group
           id="fieldset-1"
           label="RACE"
           label-for="role"
         >
-          <b-form-select v-model="Admission_Info.Race" :options="Race" />
+          <b-form-select v-model="data.admission_info.rac" :options="Race" />
         </b-form-group>
       </b-col>
       <b-col sm="3">
@@ -117,7 +112,7 @@
           label="HAIR COLOR"
           label-for="role"
         >
-          <b-form-input id="hairColor" v-model="Admission_Info.Hair_Col" :type="`text`" />
+          <b-form-input id="hairColor" v-model="data.admission_info.hair_color" type="text" />
         </b-form-group>
       </b-col>
       <b-col sm="3">
@@ -126,7 +121,7 @@
           label="EYE COLOR"
           label-for="role"
         >
-          <b-form-input id="eyeColor" v-model="Admission_Info.Eye_Col" :type="`text`" />
+          <b-form-input id="eyeColor" v-model="data.admission_info.eye_color" type="text" />
         </b-form-group>
       </b-col>
       <b-col sm="3">
@@ -135,7 +130,7 @@
           label="MARITAL STATUS"
           label-for="role"
         >
-          <b-form-select v-model="Admission_Info.Marital_Status" :options="Marital_Status" />
+          <b-form-select v-model="data.admission_info.marital_status" :options="Marital_Status" />
         </b-form-group>
       </b-col>
       <b-col sm="3">
@@ -144,38 +139,29 @@
           label="GENDER"
           label-for="role"
         >
-          <b-form-select id="gender" v-model="Admission_Info.Gender" :options="Gender" />
+          <b-form-select id="gender" v-model="data.admission_info.gender" :options="Gender" />
         </b-form-group>
       </b-col>
     </b-form-row>
-    <b-form-row>
+    <b-form-row class="mb-4">
       <b-col sm="3">
         <b-form-group
           id="fieldset-1"
           label="PLACE OF BIRTH"
           label-for="role"
         >
-          <b-form-input id="placeOfBirth" v-model="Admission_Info.Place_of_Birth" :type="`text`" />
-        </b-form-group>
-      </b-col>
-      <b-col sm="3">
-        <b-form-group
-          id="fieldset-1"
-          label="MID.REC.NUM."
-          label-for="role"
-        >
-          <b-form-input id="midRecNum" v-model="Admission_Info.Med_Rec_Num" :type="`text`" />
+          <b-form-input id="placeOfBirth" v-model="data.admission_info.pob" type="text" />
         </b-form-group>
       </b-col>
     </b-form-row>
-    <b-form-row>
+    <b-form-row class="mb-4">
       <b-col sm="3">
         <b-form-group
           id="fieldset-1"
           label="HEIGHT"
           label-for="role"
         >
-          <b-form-input id="height" v-model="Admission_Info.Height" :type="`text`" />
+          <b-form-input id="height" v-model="data.admission_info.height" type="text" />
         </b-form-group>
       </b-col>
       <b-col sm="3">
@@ -184,51 +170,51 @@
           label="WEIGHT"
           label-for="role"
         >
-          <b-form-input id="weight" v-model="Admission_Info.Weight" :type="`text`" />
+          <b-form-input id="weight" v-model="data.admission_info.weight" type="text" />
         </b-form-group>
       </b-col>
     </b-form-row>
-    <b-form-row>
+    <b-form-row class="mb-4">
       <b-col sm="3">
         <b-form-group
           id="fieldset-1"
           label="RELIGION"
           label-for="role"
         >
-          <b-form-input id="religion" v-model="Admission_Info.Religion" :type="`text`" />
+          <b-form-input id="religion" v-model="data.admission_info.religion" type="text" />
         </b-form-group>
       </b-col>
     </b-form-row>
-    <b-form-row>
+    <!-- <b-form-row class="mb-4">
       <b-col sm="3">
         <b-form-group
           id="fieldset-1"
           label="ADDMISION DATE"
           label-for="role"
         >
-          <b-form-input id="addmision" v-model="Admission_Info.Admission_Dates" :type="`date`" />
+          <b-form-input id="addmision" v-model="data.admission_info." :type="`date`" />
         </b-form-group>
       </b-col>
-    </b-form-row>
-    <b-form-row>
+    </b-form-row> -->
+    <!-- <b-form-row class="mb-4">
       <b-col sm="3">
         <b-form-group
           id="fieldset-1"
           label="FINANCIAL ADDMISION DATE"
           label-for="role"
         >
-          <b-form-input id="financialAddmissionDate" v-model="Admission_Info.Financial_Admission_Dates" :type="`date`" />
+          <b-form-input id="financialAddmissionDate" v-model="data.admission_info.Financial_Admission_Dates" :type="`date`" />
         </b-form-group>
       </b-col>
-    </b-form-row>
-    <b-form-row>
+    </b-form-row> -->
+    <b-form-row class="mb-4">
       <b-col sm="3">
         <b-form-group
           id="fieldset-1"
           label="MOBILITY NEEDS"
           label-for="role"
         >
-          <b-form-select v-model="Admission_Info.Mobility_Needs" :options="Mobility_Needs" />
+          <b-form-select v-model="data.admission_info.mobility_needs" :options="Mobility_Needs" />
         </b-form-group>
       </b-col>
       <b-col sm="3">
@@ -237,7 +223,7 @@
           label="LANGUAGE"
           label-for="role"
         >
-          <b-form-select v-model="Admission_Info.Language" :options="Language" />
+          <b-form-select v-model="data.admission_info.language" :options="Language" />
         </b-form-group>
       </b-col>
       <b-col sm="3">
@@ -246,27 +232,27 @@
           label="MEANS OF COMMUNICATION"
           label-for="role"
         >
-          <b-form-input id="meansOfComunication" v-model="Admission_Info.Means_of_Communication" :type="`text`" />
+          <b-form-input id="meansOfComunication" v-model="data.admission_info.means_communication" type="text" />
         </b-form-group>
       </b-col>
-      <b-col sm="3">
+      <!-- <b-col sm="3">
         <b-form-group
           id="fieldset-1"
           label="USUAL OCCUPATION"
           label-for="role"
         >
-          <b-form-input id="usalOccupation" v-model="Admission_Info.Usual_Occupation" :type="`text`" />
+          <b-form-input id="usalOccupation" v-model="data.admission_info.usalOccupation" type="text" />
         </b-form-group>
-      </b-col>
+      </b-col> -->
     </b-form-row>
-    <b-form-row>
+    <b-form-row class="mb-4">
       <b-col sm="3">
         <b-form-group
           id=""
           label="LEVEL OF CARE"
           label-for="level"
         >
-          <b-form-select v-model="Admission_Info.Level_of_care" :options="Level_of_care_option" />
+          <b-form-select v-model="data.admission_info.level_care" :options="Level_of_care_option" />
         </b-form-group>
       </b-col>
       <b-col sm="3">
@@ -275,7 +261,7 @@
           label="VEHICLE INFORMATION"
           label-for="level"
         >
-          <b-form-input v-model="Admission_Info.Vehicle_Information" :type="`text`" />
+          <b-form-input v-model="data.admission_info.vehicle_information" type="text" />
         </b-form-group>
       </b-col>
       <b-col sm="3">
@@ -284,26 +270,22 @@
           label="EMAIL ADDRESS"
           label-for="level"
         >
-          <b-form-input v-model="Admission_Info.Email_Address" :type="text" />
+          <b-form-input v-model="data.contact_Info.email" type="text" />
         </b-form-group>
       </b-col>
 
     </b-form-row>
-    <b-form-row>
+    <b-form-row class="mb-4">
       <b-col sm="3">
         <b-form-group
           id=""
           label="RESIDENT FLAGS"
           label-for="level"
         >
-          <b-form-checkbox-group
-            id="checkbox-group-1"
-            v-model="Resident_Flags"
-            :options="ResidentFlags"
-            :aria-describedby="ariaDescribedby2"
-            name="flavour-1"
-            stacked
-          />
+          <div v-for="(item, key, index) in data.flags" :key="key" class="">
+            <input :id="'checkbox_'+index" v-model="data.flags[key]" :name="'checkbox-'+index" type="checkbox">
+            <label :for="'checkbox_'+index" class="capitalize">{{ key.replaceAll('_'," ") }}</label>
+          </div>
         </b-form-group>
       </b-col>
       <b-col sm="3">
@@ -312,14 +294,10 @@
           label="INCOME"
           label-for="level"
         >
-          <b-form-checkbox-group
-            id="checkbox-group-2"
-            v-model="Income"
-            :options="IncomeValues"
-            :aria-describedby="ariaDescribedby3"
-            name="flavour-2"
-            stacked
-          />
+          <div v-for="(item, key, index) in data.income" :key="key" class="">
+            <input :id="'check_'+index" v-model="data.income[key]" :name="'check_'+index" type="checkbox">
+            <label :for="'check_'+index" class="capitalize">{{ key.replaceAll('_'," ") }}</label>
+          </div>
         </b-form-group>
       </b-col>
       <b-col sm="6">
@@ -328,61 +306,52 @@
           label="IDENTIFYING MARKS"
           label-for="level"
         >
-          <b-form-textarea v-model="Admission_Info.Identifying_Marks" />
+          <b-form-textarea v-model="data.admission_info.identifying_mark" />
         </b-form-group>
         <b-form-group
           id=""
           label="SPECIAL NOTE(SHOWN IN TOOLTIP AND PROFILE)"
           label-for="level"
         >
-          <b-form-textarea v-model="Admission_Info.Special_Note1" />
-        </b-form-group>
-        <b-form-group
-          id=""
-          label="SPECIAL NOTE(SHOWN IN SMART)"
-          label-for="level"
-        >
-          <b-form-textarea v-model="Admission_Info.Special_Note2" />
+          <b-form-textarea v-model="data.admission_info.special_note" />
         </b-form-group>
         <b-form-group
           id=""
           label="MAIL PREFERENCE"
           label-for="level"
         >
-          <b-form-checkbox-group
-            id="checkbox-123"
-            v-model="Mail_Preference"
-            :options="Mail_Preference_option"
-            :aria-describedby="ariaDescribedby3"
-            name="flavour-2"
-            stacked
-          />
-        </b-form-group>
-        <b-form-group
-          id=""
-          label="WAR(S) SERVED IN"
-          label-for="level"
-        >
-          <b-form-input v-model="text" placeholder="Enter your name" />
+          <div v-for="(item, key, index) in data.mail_preference" :key="key" class="">
+            <input :id="'ch_'+index" v-model="data.mail_preference[key]" :name="'ch_'+index" type="checkbox">
+            <label :for="'ch_'+index" class="capitalize">{{ key.replaceAll('_'," ") }}</label>
+          </div>
         </b-form-group>
         <b-form-group
           id=""
           label="MILITARY BRANCH"
           label-for="level"
         >
-          <b-form-select v-model="Military_Information.Military_Branch" :options="Military_Information_options" />
+          <div v-for="(item, key, index) in data.military_information" :key="key" class="">
+            <input :id="'mil_'+index" v-model="data.military_information[key]" :name="'mil_'+index" type="checkbox">
+            <label :for="'mil_'+index" class="capitalize">{{ key.replaceAll('_'," ") }}</label>
+          </div>
+          <!-- <b-form-select v-model="" :options="Military_Information_options" /> -->
         </b-form-group>
       </b-col>
 
     </b-form-row>
-    <b-form-row>
+    <b-form-row class="mb-4">
+      <b-col sm="4">
+        <h3>Physical Address</h3>
+      </b-col>
+    </b-form-row>
+    <b-form-row class="mb-4">
       <b-col sm="4">
         <b-form-group
           id=""
           label="STREET ADDRESS"
           label-for="level"
         >
-          <b-form-input v-model="text" />
+          <b-form-input v-model="data.physical_address.address_line_1" />
         </b-form-group>
       </b-col>
       <b-col sm="4">
@@ -391,7 +360,7 @@
           label="CITY"
           label-for="level"
         >
-          <b-form-input v-model="text" />
+          <b-form-input v-model="data.physical_address.city" />
         </b-form-group>
       </b-col>
       <b-col sm="4">
@@ -400,7 +369,7 @@
           label="STATE"
           label-for="level"
         >
-          <b-form-input v-model="text" />
+          <b-form-input v-model="data.physical_address.state" />
         </b-form-group>
       </b-col>
       <b-col sm="4">
@@ -409,13 +378,99 @@
           label="ZIP"
           label-for="level"
         >
-          <b-form-input v-model="text" />
+          <b-form-input v-model="data.physical_address.zip" />
         </b-form-group>
       </b-col>
     </b-form-row>
-    <b-form-row>
+    <b-form-row class="mb-4">
+      <b-col sm="4">
+        <h3>Mailing Address</h3>
+      </b-col>
+    </b-form-row>
+    <b-form-row class="mb-4">
+      <b-col sm="4">
+        <b-form-group
+          id=""
+          label="STREET ADDRESS"
+          label-for="level"
+        >
+          <b-form-input v-model="data.mailing_address.address_line_1" />
+        </b-form-group>
+      </b-col>
+      <b-col sm="4">
+        <b-form-group
+          id=""
+          label="CITY"
+          label-for="level"
+        >
+          <b-form-input v-model="data.mailing_address.city" />
+        </b-form-group>
+      </b-col>
+      <b-col sm="4">
+        <b-form-group
+          id=""
+          label="STATE"
+          label-for="level"
+        >
+          <b-form-input v-model="data.mailing_address.state" />
+        </b-form-group>
+      </b-col>
+      <b-col sm="4">
+        <b-form-group
+          id=""
+          label="ZIP"
+          label-for="level"
+        >
+          <b-form-input v-model="data.mailing_address.zip" />
+        </b-form-group>
+      </b-col>
+    </b-form-row>
+    <b-form-row class="mb-4">
+      <b-col sm="4">
+        <h3>Previous Address</h3>
+      </b-col>
+    </b-form-row>
+    <b-form-row class="mb-4">
+      <b-col sm="4">
+        <b-form-group
+          id=""
+          label="STREET ADDRESS"
+          label-for="level"
+        >
+          <b-form-input v-model="data.previous_address.address_line_1" />
+        </b-form-group>
+      </b-col>
+      <b-col sm="4">
+        <b-form-group
+          id=""
+          label="CITY"
+          label-for="level"
+        >
+          <b-form-input v-model="data.previous_address.city" />
+        </b-form-group>
+      </b-col>
+      <b-col sm="4">
+        <b-form-group
+          id=""
+          label="STATE"
+          label-for="level"
+        >
+          <b-form-input v-model="data.previous_address.state" />
+        </b-form-group>
+      </b-col>
+      <b-col sm="4">
+        <b-form-group
+          id=""
+          label="ZIP"
+          label-for="level"
+        >
+          <b-form-input v-model="data.previous_address.zip" />
+        </b-form-group>
+      </b-col>
+    </b-form-row>
+    <b-form-row class="mb-4">
       <b-col>
-        <b-button variant="success">Submit</b-button>
+        <b-button variant="success" @click="addResident">Submit</b-button>
       </b-col>
     </b-form-row>
   </b-form>
@@ -426,85 +481,137 @@ export default {
   name: 'AddResident',
   data() {
     return {
-      Contact_Info: {
-        First_Name: '',
-        Middle_Name: '',
-        Last_Name: '',
-        Nick_Name: '',
-        Date_of_Birth: '',
-        Home_Phone: '',
-        Mobile_Phone: '',
-        Email: '',
+      data: {
+        contact_Info: {
+          first_name: '',
+          middle_name: '',
+          last_name: '',
+          nick_name: '',
+          dob: '',
+          mobile_phone: '',
+          home_phone: '',
+          email: '',
+        },
+        physical_address: {
+          address_line_1: '',
+          address_line_2: '',
+          city: '',
+          state: '',
+          zip: '',
+        },
+        previous_address: {
+          address_line_1: '',
+          address_line_2: '',
+          city: '',
+          state: '',
+          zip: '',
+        },
+        mailing_address: {
+          address_line_1: '',
+          address_line_2: '',
+          city: '',
+          state: '',
+          zip: '',
+        },
+        admission_info: {
+          ssn: '',
+          pob: '',
+          medica_rec_n: '',
+          medical_id_no: '',
+          gender: '',
+          rac: '',
+          hair_color: '',
+          eye_color: '',
+          marital_status: '',
+          referral_type: '',
+          height: '',
+          weight: '',
+          religion: '',
+          mobility_needs: '',
+          language: '',
+          means_communication: '',
+          level_care: '',
+          vehicle_information: '',
+          email: '',
+          identifying_mark: '',
+          special_note: '',
+          scheduled_days: {
+            monday: false,
+            tuesday: false,
+            wednesday: false,
+            thursday: false,
+            friday: false,
+          },
+          pick_up_days: {
+            monday: false,
+            tuesday: false,
+            wednesday: false,
+            thursday: false,
+            friday: false,
+          },
+          drop_off: {
+            monday: false,
+            tuesday: false,
+            wednesday: false,
+            thursday: false,
+            friday: false,
+          },
+        },
+        flags: {
+          two_person_assist_mobilty: false,
+          advanced_directive: false,
+          alcohol_order: false,
+          beauty_shop: false,
+          chf_factors: false,
+          cpr: false,
+          decision_making_capacity_risk: false,
+          dementia: false,
+          diabetic: false,
+          dni: false,
+          dnr_order_signed_by_physician: false,
+          do_not_intubate: false,
+          elopment_risk: false,
+          etoh_use: false,
+          fall_risk: false,
+          flight_risk: false,
+          food_allergies: false,
+          full_code: false,
+          guadianship: false,
+          history_of_illicit_drug_use: false,
+          iddm: false,
+          laundry: false,
+          living_will: false,
+          living_will_dnr: false,
+          medicine_allergies: false,
+          molst: false,
+          most: false,
+          newspaper: false,
+          non_english_speaking: false,
+          ohdnr: false,
+          other_allergies: false,
+          pacemaker: false,
+          polst: false,
+          post: false,
+          power_of_attorney: false,
+          proxy_caregiver: false,
+          receiver_antibiotics: false,
+          receiver_anticoagulant: false,
+          receiver_psychoropics: false,
+          resident_secure_demential_unit: false,
+          served_oversea: false,
+          smoker: false,
+          suffocation_risk: false,
+        },
+        income: {
+          city_subsidy: false,
+        },
+        military_information: {
+          air_force: false,
+        },
+        mail_preference: {
+          open_all_email: false,
+        },
       },
-      Physical_Address: {
-        Address_Line_1: '',
-        Address_Line_2: '',
-        City: '',
-        State: '',
-        Zip: '',
-      },
-      Mailing_Address: {
-        Address_Line_1: '',
-        Address_Line_2: '',
-        City: '',
-        State: '',
-        Zip: '',
-      },
-      Previous_Address: {
-        Address_Line_1: '',
-        Address_Line_2: '',
-        City: ' ',
-        State: '',
-        Zip: '',
-      },
-      Admission_Info: {
-        Social_Security_No: '',
-        Place_of_Birth: '',
-        Med_Rec_Num: '',
-        Medicaid_No: '',
-        Gender: '',
-        Race: null,
-        Hair_Col: '',
-        Eye_Col: '',
-        Marital_Status: '',
-        Referral_Type: '',
-        Height: '',
-        Weight: '',
-        Religion: '',
-        Mobility_Needs: '',
-        Language: '',
-        Means_of_Communication: '',
-        Level_of_care: '',
-        Vehicle_Information: '',
-        Email_Address: '',
-        Identifying_Marks: '',
-        Special_Note1: '',
-        Special_Note2: '',
-        Admission_Dates: '',
-        Financial_Admission_Dates: '',
-        Start_Date: '',
-        Withdrawal_Date: '',
-        Usual_Occupation: '',
-      },
-      Resident_Flags: [],
-      Income: [],
-      Military_Information: {
-        Wars_served_In: '',
-        Military_Branch: '',
-        Air_Force: '',
-        Air_Force_Reserve: '',
-        Air_National_Guard: '',
-        Army: '',
-        Army_National_Guard: '',
-        Army_Reserve: '',
-        Coast_Guard: '',
-        Coast_Guard_Reserve: '',
-        Marine_Corps: '',
-        Marine_Corps_Reserve: '',
-        Navy: '',
-        Navy_Reserve: '',
-      },
-      Mail_Preference: [],
       Race: [
         { value: null, text: 'Please select an option' },
         { value: 'African-American', text: 'African-American' },
@@ -669,6 +776,20 @@ export default {
         { value: 'Navy Reserve', text: 'Navy Reserve' },
       ],
     };
+  },
+  methods: {
+    addResident() {
+      this.$store.dispatch('User/addResident', this.data)
+        .then(response => {
+          this.$message({
+            message: `${response.message}`,
+            type: 'success',
+            duration: 5 * 1000,
+          });
+          this.loading = true;
+          this.$router.push({ name: 'dashboard' });
+        });
+    },
   },
 };
 </script>
