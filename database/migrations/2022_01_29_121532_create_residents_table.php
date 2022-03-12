@@ -17,6 +17,7 @@ class CreateResidentsTable extends Migration
             $table->uuid('id')->primary();
             $table->uuid('user_id')->index();
             $table->uuid('company_id')->index();
+            $table->uuid('group_id')->index();
             $table->string('first_name')->nullable();
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
@@ -26,6 +27,9 @@ class CreateResidentsTable extends Migration
             $table->string('mobile_phone', 15)->nullable();
             $table->string('home_phone', 15)->nullable();
             $table->string('email', 50)->unique();
+            $table->string('mailing_address', 50)->unique();
+            $table->string('physical_address', 50)->unique();
+            $table->string('previous_address', 50)->unique();
             $table->json('flags')->nullable();
             $table->json('income')->nullable();
             $table->json('military_information')->nullable();

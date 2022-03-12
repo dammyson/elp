@@ -12,7 +12,8 @@ class Resident extends Model
 
     protected $fillable = ['id', 
     'user_id', 
-    'company_id',  
+    'company_id', 
+    'group_id', 
     'first_name', 
     'middle_name',
     'last_name', 
@@ -22,7 +23,13 @@ class Resident extends Model
     'home_phone', 
     'flags', 
     'income', 
-    'military_information', 'mail_preference'];
+    'military_information', 
+    'mail_preference',
+    'mailing_address',
+    'previous_address',
+    'physical_address'
+
+];
 
     public function physical_address()
     {

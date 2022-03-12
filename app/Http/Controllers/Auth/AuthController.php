@@ -39,6 +39,7 @@ class AuthController extends Controller
             return response()->json(['status' => false,  'message' => 'Error processing request'], 500);
         }
     }
+
     /**
      * Handle a login request to the application.
      * @param LoginRequest $request
@@ -78,7 +79,7 @@ class AuthController extends Controller
      */
     public function postLogin(LoginRequest $request)
     {
-        $validated = $request->validated();
+         $validated = $request->validated();
         if (auth()->attempt(['email' =>  $validated['email'], 'password' =>  $validated['password']])) {
             $user = Auth::user();
             $token = $user->createToken($validated['email'])->accessToken;

@@ -16,10 +16,7 @@ class InfoService implements BaseServiceInterface
 
     public function run()
     {
-     
        $res = Groups::findorfail($this->id);
-       
-       
-        return $res; 
+       return $res; 
     }
 }

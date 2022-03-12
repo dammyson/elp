@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePreviousAddressesTable extends Migration
+class CreateAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreatePreviousAddressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('previous_addresses', function (Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('resident_id')->index();
             $table->string('address_line_1')->default('');
             $table->string('address_line_2')->default('');
             $table->string('city')->default('');
             $table->string('state')->default('');
             $table->string('zip')->default('');
+            $table->string('type')->default('');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -33,6 +33,6 @@ class CreatePreviousAddressesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('previous_addresses');
+        Schema::dropIfExists('addresses');
     }
 }
