@@ -31,21 +31,6 @@ class Resident extends Model
 
 ];
 
-    public function physical_address()
-    {
-        return $this->hasOne('App\Models\PhysicalAddress');
-    }
-
-    public function mailing_address()
-    {
-        return $this->hasOne('App\Models\MailingAddress');
-    }
-
-    public function previous_address()
-    {
-        return $this->hasOne('App\Models\PreviousAddress');
-    }
-
     public function admission_info()
     {
         return $this->hasOne('App\Models\AdmissionInfo');

@@ -18,7 +18,7 @@ class InfoService implements BaseServiceInterface
     public function run()
     {
      
-       $res = Resident::with('physical_address', 'mailing_address', 'previous_address', 'admission_info')->findorfail($this->id);
+       $res = Resident::with('admission_info')->findorfail($this->id);
        
        
         return $res; 
