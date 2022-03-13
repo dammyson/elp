@@ -17,7 +17,7 @@ class ListService implements BaseServiceInterface
 
     public function run()
     {
-            return Resident::with('physical_address', 'mailing_address', 'previous_address', 'admission_info')->where('company_id', $this->company_id)->latest()->get();
+            return Resident::with('admission_info')->where('company_id', $this->company_id)->latest()->get();
        
     }
 }
