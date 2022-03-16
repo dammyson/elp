@@ -1,7 +1,6 @@
 <template>
   <div class="">
     <b-modal id="MoreDetails" size="xl" title="MoreDetails">
-      <p class="my-4">Hello from modal!</p>
       <b-tabs content-class="mt-3">
         <b-tab title="Details" active>
           <b-container class="bv-example-row">
@@ -361,6 +360,54 @@
                 </b-row>
               </b-container>
             </b-tab>
+            <b-tab title="Diagnosis">
+              <b-container>
+                <b-row>
+                  <b-col>
+                    <h4 class="">Diagnosis</h4>
+                  </b-col>
+                </b-row>
+                <b-row class="mt-4">
+                  <b-col>
+                    <b-card>
+                      <b-table striped responsive hover :items="diagnosis" />
+                    </b-card>
+                  </b-col>
+                </b-row>
+              </b-container>
+            </b-tab>
+            <b-tab title="Allergy">
+              <b-container>
+                <b-row>
+                  <b-col>
+                    <h4 class="">Allergy</h4>
+                  </b-col>
+                </b-row>
+                <b-row class="mt-4">
+                  <b-col>
+                    <b-card>
+                      <b-table striped responsive hover :items="allergy" />
+                    </b-card>
+                  </b-col>
+                </b-row>
+              </b-container>
+            </b-tab>
+            <b-tab title="Immunization">
+              <b-container>
+                <b-row>
+                  <b-col>
+                    <h4 class="">Immunization</h4>
+                  </b-col>
+                </b-row>
+                <b-row class="mt-4">
+                  <b-col>
+                    <b-card>
+                      <b-table striped responsive hover :items="immunization" />
+                    </b-card>
+                  </b-col>
+                </b-row>
+              </b-container>
+            </b-tab>
           </b-tabs>
         </b-tab>
       </b-tabs>
@@ -434,9 +481,11 @@
         </b-row>
       </b-container>
     </b-modal>
+
     <b-modal id="EditResident" size="xl" title="BootstrapVue">
       <p class="my-4">Hello from modal!</p>
     </b-modal>
+
     <b-modal id="AddMedication" size="xl" title="Add Medication">
       <b-container>
         <b-row>
@@ -694,24 +743,308 @@
         </b-row>
       </b-container>
     </b-modal>
+
+    <b-modal id="AddDiagnosis" size="xl" title="Add Diagnosis">
+      <b-container>
+        <b-row>
+          <b-col>
+            <b-card>
+              <b-row>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Type"
+                    label-for="role"
+                  >
+                    <b-form-select />
+                  </b-form-group>
+                </b-col>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Start Date"
+                    label-for="role"
+                  >
+                    <b-form-input type="date" />
+                  </b-form-group>
+                </b-col>
+              </b-row>
+              <b-row>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Diagnosis Level (used for ordering diagnosis on MA-51, transfer & face sheets)"
+                    label-for="role"
+                  >
+                    <b-form-select />
+                  </b-form-group>
+                </b-col>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Stop Date"
+                    label-for="role"
+                  >
+                    <b-form-input type="date" />
+                  </b-form-group>
+                </b-col>
+              </b-row>
+              <b-row>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Dignosis Description"
+                    label-for="role"
+                  >
+                    <b-form-textarea />
+                  </b-form-group>
+                </b-col>
+              </b-row>
+              <b-row>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Plan To Meet Need"
+                    label-for="role"
+                  >
+                    <b-form-textarea />
+                  </b-form-group>
+                </b-col>
+              </b-row>
+            </b-card>
+          </b-col>
+        </b-row>
+      </b-container>
+    </b-modal>
+
+    <b-modal id="AddImunization" title="Add Imunization">
+      <b-container>
+        <b-row>
+          <b-col>
+            <b-card>
+              <b-row>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Date"
+                    label-for="role"
+                  >
+                    <b-form-input type="date" />
+                  </b-form-group>
+                </b-col>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Type"
+                    label-for="role"
+                  >
+                    <b-form-select />
+                  </b-form-group>
+                </b-col>
+              </b-row>
+              <b-row>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Note Description"
+                    label-for="role"
+                  >
+                    <b-form-textarea />
+                  </b-form-group>
+                </b-col>
+              </b-row>
+            </b-card>
+          </b-col>
+        </b-row>
+      </b-container>
+    </b-modal>
+
+    <b-modal id="AddAllergy" size="xl" title="Add Allergy">
+      <b-container>
+        <b-row>
+          <b-col>
+            <b-card>
+              <b-row>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Start Date"
+                    label-for="role"
+                  >
+                    <b-form-input type="date" />
+                  </b-form-group>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Stop Date"
+                    label-for="role"
+                  >
+                    <b-form-input type="date" />
+                  </b-form-group>
+                </b-col>
+                <b-col>
+                  <b-form-group label="Type">
+                    <b-form-checkbox-group
+                      id="checkbox-group-2"
+                      name="flavour-2"
+                      stacked
+                    >
+                      <b-form-checkbox value="Medical">Medical</b-form-checkbox>
+                      <b-form-checkbox value="Food">Food</b-form-checkbox>
+                      <b-form-checkbox value="Other">Other</b-form-checkbox>
+                    </b-form-checkbox-group>
+                  </b-form-group>
+                </b-col>
+              </b-row>
+              <b-row>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Allergy Name"
+                    label-for="role"
+                  >
+                    <b-form-textarea />
+                  </b-form-group>
+                </b-col>
+              </b-row>
+              <b-row>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Explanation"
+                    label-for="role"
+                  >
+                    <b-form-textarea />
+                  </b-form-group>
+                </b-col>
+              </b-row>
+            </b-card>
+          </b-col>
+        </b-row>
+      </b-container>
+    </b-modal>
+
+    <b-modal id="AddNote" title="Add Note">
+      <b-container>
+        <b-row>
+          <b-col>
+            <b-card>
+              <b-row>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Start Date"
+                    label-for="role"
+                  >
+                    <b-form-input type="date" />
+                  </b-form-group>
+                </b-col>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Start Date"
+                    label-for="role"
+                  >
+                    <b-form-input type="time" />
+                  </b-form-group>
+                </b-col>
+              </b-row>
+              <b-row>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Shift"
+                    label-for="role"
+                  >
+                    <b-form-select type="date" />
+                  </b-form-group>
+                </b-col>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Type"
+                    label-for="role"
+                  >
+                    <b-form-select />
+                  </b-form-group>
+                </b-col>
+              </b-row>
+              <b-row>
+                <b-col>
+                  <b-form-group label="Show On Calender">
+                    <b-form-checkbox-group
+                      id="checkbox-group-2"
+                      name="flavour-2"
+                      stacked
+                    >
+                      <b-form-checkbox value="Food">Yes</b-form-checkbox>
+                      <b-form-checkbox value="Other">No</b-form-checkbox>
+                    </b-form-checkbox-group>
+                  </b-form-group>
+                </b-col>
+                <b-col>
+                  <b-form-group label="Flag As Important">
+                    <b-form-checkbox-group
+                      id="checkbox-group-2"
+                      name="flavour-2"
+                      stacked
+                    >
+                      <b-form-checkbox value="Food">Yes</b-form-checkbox>
+                      <b-form-checkbox value="Other">No</b-form-checkbox>
+                    </b-form-checkbox-group>
+                  </b-form-group>
+                </b-col>
+              </b-row>
+              <b-row>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Note Description"
+                    label-for="role"
+                  >
+                    <b-form-textarea />
+                  </b-form-group>
+                </b-col>
+              </b-row>
+              <b-row>
+                <b-col>
+                  <b-form-group
+                    id="fieldset-1"
+                    label="Upload Attachment"
+                    label-for="role"
+                  >
+                    <b-form-input type="file" />
+                  </b-form-group>
+                </b-col>
+              </b-row>
+            </b-card>
+          </b-col>
+        </b-row>
+      </b-container>
+    </b-modal>
     <div class="row">
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
             <b-table striped responsive hover :items="myProvider">
               <template #cell(action)="data">
-                <b-dropdown size="lg" variant="link" dropright toggle-class=" focus:bg-gray-200 hover:bg-gray-200 btn btn-sm btn-rounded btn-icon" no-caret>
-                  <template #button-content>
+                <el-dropdown>
+                  <span class="focus:bg-gray-200 hover:bg-gray-200 btn btn-sm btn-rounded btn-icon flex justify-center items-center">
                     <i class="mdi mdi-dots-vertical" />
-                  </template>
-                  <b-dropdown-item v-b-modal.EditResident href="#">Edit Details</b-dropdown-item>
-                  <b-dropdown-item v-b-modal.AddContacts href="#">Add Contacts</b-dropdown-item>
-                  <b-dropdown-item v-b-modal.AddMedication href="#">Add Medication</b-dropdown-item>
-                  <b-dropdown-item v-b-modal.MoreDetails href="#" @click="getDetail(data.value)">More Details</b-dropdown-item>
-                </b-dropdown>
+                  </span>
+                  <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item v-b-modal.MoreDetails @click="getDetail(data.value)">More Details</el-dropdown-item>
+                    <el-dropdown-item v-b-modal.EditResident>Edit Details</el-dropdown-item>
+                    <el-dropdown-item v-b-modal.AddContacts>Add Contacts</el-dropdown-item>
+                    <el-dropdown-item v-b-modal.AddMedication>Add Medication</el-dropdown-item>
+                    <el-dropdown-item v-b-modal.AddDiagnosis>Add Diagnosis</el-dropdown-item>
+                    <el-dropdown-item v-b-modal.AddImunization>Add Imunization</el-dropdown-item>
+                    <el-dropdown-item v-b-modal.AddAllergy>Add Allergy</el-dropdown-item>
+                    <el-dropdown-item v-b-modal.AddNote>Add Note</el-dropdown-item>
+                    <el-dropdown-item divided>Action 5</el-dropdown-item>
+                  </el-dropdown-menu>
+                </el-dropdown>
               </template>
-              <!-- <template #cell(name)>
-              </template> -->
+
             </b-table>
           </div>
         </div>
@@ -739,6 +1072,35 @@ export default {
           start_stop: 'test',
           pass_times: 'test',
           actions: 'test',
+        },
+      ],
+      diagnosis: [
+        {
+          Start: 'test',
+          Stop: 'test',
+          Type: 'test',
+          Diagnosis_level: 'test',
+          Description: 'test',
+          Plan_To_Meet_Need: 'test',
+          Action: 'test',
+        },
+      ],
+      allergy: [
+        {
+          Start: 'test',
+          Stop: 'test',
+          Type: 'test',
+          Description: 'test',
+          Explanation: 'test',
+          Action: 'test',
+        },
+      ],
+      immunization: [
+        {
+          Date: 'test',
+          Type: 'test',
+          Description: 'test',
+          Action: 'test',
         },
       ],
     };
